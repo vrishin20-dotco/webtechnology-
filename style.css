@@ -1,0 +1,154 @@
+
+/* Universal Selector */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+/* Body */
+body{
+background:#f5f5f5;
+color:#333;
+line-height:1.6;
+}
+/* Header using Flexbox */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#003366;
+color:white;
+}
+.logo h2{
+margin-bottom:5px;
+}
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:.3s;
+}
+nav a:hover{
+color:yellow;
+}
+
+/* Hero Section */
+.hero{
+text-align:center;
+padding:70px 20px;
+background:linear-gradient(to right,#0059b3,#3399ff);
+color:white;
+}
+.hero h1{
+font-size:40px;
+margin-bottom:20px;
+}
+.hero button{
+padding:12px 25px;
+border:none;
+background:white;
+color:#003366;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+border-radius:5px;
+}
+.hero button:hover{
+background:yellow;
+}
+/* Flexbox */
+.features{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:40px;
+flex-wrap:wrap;
+
+}
+.card{
+background:white;
+padding:25px;
+width:300px;
+border-radius:8px;
+box-shadow:0 3px 8px gray;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+}
+/* Grid */
+.news{
+padding:40px;
+}
+.news h2{
+text-align:center;
+margin-bottom:30px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+.box{
+background:white;
+padding:20px;
+border-radius:6px;
+box-shadow:0 2px 5px gray;
+}
+
+/* Footer */
+footer{
+background:#003366;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+/* Responsive Tablet */
+@media(max-width:768px){
+header{
+flex-direction:column;
+}
+nav ul{
+flex-direction:column;
+text-align:center;
+margin-top:15px;
+}
+.grid{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:30px;
+}
+}
+/* Responsive Mobile */
+@media(max-width:480px){
+.hero{
+padding:40px 10px;
+}
+
+.hero h1{
+font-size:24px;
+}
+.card{
+width:100%;
+}
+button{
+width:100%;
+}
+}
+Page 1 of 9PRACTICAL 2Below is a complete solution for designing a Responsive Department Homepage usingHTML5 and CSS3 that demonstrates: ✔ CSS Selectors ✔ Cascading and Inheritance ✔ CSS Box Model ✔ Flexbox ✔ CSS Grid ✔ Media Queries ✔ Responsive Web Design ✔ Professional UIExperiment: Responsive DepartmentHomepage using CSS3AimTo apply CSS3 concepts for designing responsive, visually appealing, and user-friendly webpages using Flexbox, CSS Grid, media queries, cascading, and inheritance principles.Objective Design a professional department homepage. Implement responsive layouts using Flexbox and Grid. Apply CSS selectors, cascading, and inheritance. Ensure compatibility across desktop, tablet, and mobile devices.DepartmentWebsite│├── index.html├── style.css└── images
+Page 2 of 9└── logo.png&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&lt;title&gt;Department of Computer Engineering&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;header&gt;&lt;div class=&quot;logo&quot;&gt;&lt;h2&gt;CHARUSAT&lt;/h2&gt;&lt;p&gt;Department of Computer Engineering&lt;/p&gt;&lt;/div&gt;&lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Faculty&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Research&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;/header&gt;&lt;section class=&quot;hero&quot;&gt;&lt;h1&gt;Welcome to Computer Engineering&lt;/h1&gt;&lt;p&gt;Empowering future innovators through quality education,research and technology.&lt;/p&gt;&lt;button&gt;Explore More&lt;/button&gt;&lt;/section&gt;&lt;section class=&quot;features&quot;&gt;&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;Academic Programs&lt;/h3&gt;&lt;p&gt;B.Tech, M.Tech and Ph.D Programs&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;Modern Labs&lt;/h3&gt;&lt;p&gt;AI Lab, IoT Lab, Cyber Security Lab and Cloud Lab.&lt;/p&gt;&lt;/div&gt;
+Page 3 of 9&lt;div class=&quot;card&quot;&gt;&lt;h3&gt;Research&lt;/h3&gt;&lt;p&gt;Industry-oriented projects and funded research.&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;news&quot;&gt;&lt;h2&gt;Latest News&lt;/h2&gt;&lt;div class=&quot;grid&quot;&gt;&lt;div class=&quot;box&quot;&gt;&lt;h3&gt;Workshop&lt;/h3&gt;&lt;p&gt;Full Stack Development Workshop conducted successfully.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;box&quot;&gt;&lt;h3&gt;Hackathon&lt;/h3&gt;&lt;p&gt;Students won first prize in National Cyber Security Hackathon.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;box&quot;&gt;&lt;h3&gt;Placement&lt;/h3&gt;&lt;p&gt;95% placement achieved in leading IT companies.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;box&quot;&gt;&lt;h3&gt;Admissions&lt;/h3&gt;&lt;p&gt;Admissions Open for Academic Year 2026-27.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;&lt;footer&gt;&lt;p&gt;© 2026 Department of Computer Engineering | CHARUSAT&lt;/p&gt;&lt;/footer&gt;&lt;/body&gt;&lt;/html&gt;
+Page 4 of 9CSS/* Universal Selector */*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}/* Body */body{background:#f5f5f5;color:#333;line-height:1.6;}/* Header using Flexbox */header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#003366;color:white;}.logo h2{margin-bottom:5px;}nav ul{display:flex;list-style:none;gap:20px;}nav a{text-decoration:none;color:white;font-weight:bold;transition:.3s;}nav a:hover{color:yellow;}
+Page 5 of 9/* Hero Section */.hero{text-align:center;padding:70px 20px;background:linear-gradient(to right,#0059b3,#3399ff);color:white;}.hero h1{font-size:40px;margin-bottom:20px;}.hero button{padding:12px 25px;border:none;background:white;color:#003366;font-weight:bold;cursor:pointer;margin-top:20px;border-radius:5px;}.hero button:hover{background:yellow;}/* Flexbox */.features{display:flex;justify-content:center;gap:25px;padding:40px;flex-wrap:wrap;
+Page 6 of 9}.card{background:white;padding:25px;width:300px;border-radius:8px;box-shadow:0 3px 8px gray;transition:.3s;}.card:hover{transform:translateY(-8px);}/* Grid */.news{padding:40px;}.news h2{text-align:center;margin-bottom:30px;}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}.box{background:white;padding:20px;border-radius:6px;box-shadow:0 2px 5px gray;}
+Page 7 of 9/* Footer */footer{background:#003366;color:white;text-align:center;padding:15px;margin-top:20px;}/* Responsive Tablet */@media(max-width:768px){header{flex-direction:column;}nav ul{flex-direction:column;text-align:center;margin-top:15px;}.grid{grid-template-columns:1fr;}.hero h1{font-size:30px;}}/* Responsive Mobile */@media(max-width:480px){.hero{padding:40px 10px;}
+Page 8 of 9.hero h1{font-size:24px;}.card{width:100%;}button{width:100%;}}CSS3 Concepts UsedConcept ImplementationUniversal Selector *Element Selector body, header, footerClass Selector .hero, .card, .gridDescendantSelector.logo h2, nav aPseudo-class :hoverFlexbox Header and Features SectionCSS Grid News SectionMedia Queries Tablet and Mobile ResponsivenessBox Model Margin, Padding, Border, Box-sizingTransition Button and Card Hover EffectsCascading General styles overridden in media queriesInheritance Font family and text color inherited by childelementsOutput Features Responsive navigation bar Professional university homepage Hero banner with call-to-action button Flexbox-based feature cards CSS Grid-based latest news section Hover effects and transitions Mobile-friendly layout using media queries Clean typography and consistent color scheme
