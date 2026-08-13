@@ -1,729 +1,448 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="author" content="VRISHIN STORE">
-
-    <meta name="description"
-          content="VRISHIN STORE & BEAUTY PARLOUR - Cosmetics, beauty products and professional beauty services.">
-
-    <title>VRISHIN STORE & BEAUTY PARLOUR</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f1e7;
-            color: #333333;
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #7b1e3a, #a52a4a);
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-area img {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-        }
-
-        .logo-area h1 {
-            font-size: 25px;
-            letter-spacing: 1px;
-        }
-
-        .logo-area p {
-            font-size: 13px;
-            color: #ffe5b4;
-        }
-
-        /* Navigation */
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd27f;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 50px 20px;
-
-            background:
-                linear-gradient(
-                    rgba(60, 10, 25, 0.65),
-                    rgba(60, 10, 25, 0.65)
-                ),
-                url("beauty.jpg");
-
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h2 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
-
-        .hero h2 span {
-            color: #ffd27f;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffd27f;
-            color: #5a172c;
-            padding: 13px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: white;
-            transform: translateY(-3px);
-        }
-
-        /* General Sections */
-        section {
-            padding: 70px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #7b1e3a;
-            font-size: 35px;
-            margin-bottom: 40px;
-        }
-
-        /* About */
-        .about {
-            background-color: white;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .about-content strong {
-            color: #7b1e3a;
-        }
-
-        /* Services */
-        .services {
-            background-color: #f8f1e7;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background-color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            color: #7b1e3a;
-            margin-bottom: 10px;
-        }
-
-        /* Products */
-        .products {
-            background-color: white;
-        }
-
-        .product-card {
-            overflow: hidden;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            color: #a52a4a;
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 10px;
-        }
-
-        /* Events */
-        .events {
-            background-color: #f8f1e7;
-        }
-
-        .event-box {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-left: 6px solid #7b1e3a;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
-
-        .event-box h3 {
-            color: #7b1e3a;
-        }
-
-        /* Contact */
-        .contact {
-            background-color: #7b1e3a;
-            color: white;
-        }
-
-        .contact .section-title {
-            color: #ffd27f;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .contact-info {
-            font-size: 18px;
-        }
-
-        .contact-info p {
-            margin: 15px 0;
-        }
-
-        .contact-form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 15px;
-        }
-
-        .contact-form textarea {
-            height: 120px;
-            resize: none;
-        }
-
-        .contact-form button {
-            width: 100%;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #3c0a19;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        footer span {
-            color: #ffd27f;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 850px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .hero h2 {
-                font-size: 38px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h2 {
-                font-size: 30px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 50px 5%;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="VRISHIN STORE">
+<meta name="description" content="VRISHIN STORE & BEAUTY PARLOUR - Cosmetics, beauty products and professional beauty services.">
+
+<title>VRISHIN STORE | Beauty & Cosmetics</title>
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --wine:#65152e;
+    --wine-dark:#3b0a1b;
+    --gold:#d8ad58;
+    --gold-light:#f5dfaa;
+    --cream:#fff9f4;
+    --text:#2b2023;
+    --muted:#756c6f;
+    --white:#fff;
+    --border:#eadbd2;
+    --shadow:0 12px 35px rgba(55,18,30,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+.container{width:min(1200px,92%);margin:auto}
+.topbar{background:var(--wine-dark);color:#f8e8c7;text-align:center;padding:8px;font-size:13px;letter-spacing:.3px}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.navbar{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.brand h1{font-family:Cinzel,serif;font-size:21px;color:var(--wine);line-height:1.1}
+.brand span{display:block;font-size:10px;letter-spacing:2.5px;color:var(--gold);margin-top:3px}
+nav ul{display:flex;list-style:none;gap:24px}
+nav a{font-size:14px;font-weight:600;color:#4c4145;position:relative}
+nav a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--gold);transition:.25s}
+nav a:hover{color:var(--wine)}
+nav a:hover:after{width:100%}
+.nav-actions{display:flex;gap:10px}
+.icon-btn{width:42px;height:42px;border:1px solid var(--border);background:white;border-radius:50%;cursor:pointer;color:var(--wine);position:relative}
+.cart-count{position:absolute;right:-2px;top:-3px;background:var(--wine);color:#fff;border-radius:50%;font-size:10px;width:18px;height:18px;display:grid;place-items:center}
+.hero{background:linear-gradient(100deg,rgba(45,5,20,.92),rgba(101,21,46,.72)),url("ChatGPT Image Aug 8, 2026, 09_49_58 PM.png") center/cover;min-height:570px;display:flex;align-items:center;color:#fff}
+.hero-content{max-width:650px;padding:80px 0}
+.eyebrow{color:var(--gold-light);text-transform:uppercase;letter-spacing:3px;font-size:13px;font-weight:600}
+.hero h2{font-family:Cinzel,serif;font-size:clamp(38px,5.5vw,70px);line-height:1.08;margin:15px 0}
+.hero h2 span{color:var(--gold-light)}
+.hero p{color:#f5e9e9;max-width:600px;font-size:16px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:30px;padding:13px 24px;background:var(--gold);color:var(--wine-dark);font-weight:700;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.btn-outline{background:transparent;color:white;border:1px solid rgba(255,255,255,.55)}
+.btn-outline:hover{background:white;color:var(--wine)}
+.features{background:#fff;border-bottom:1px solid var(--border)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:24px 0}
+.feature{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid var(--border)}
+.feature:last-child{border:0}
+.feature b{display:block;font-size:14px}
+.feature small{color:var(--muted);font-size:11px}
+.section{padding:80px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head .eyebrow{color:var(--wine)}
+.section-head h2{font-family:Cinzel,serif;color:var(--wine);font-size:38px;margin:6px 0}
+.section-head p{color:var(--muted);max-width:650px;margin:auto}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.category{min-height:190px;border-radius:18px;padding:28px;display:flex;flex-direction:column;justify-content:end;color:#fff;overflow:hidden;position:relative;background:linear-gradient(135deg,#4a0c20,#9a3151)}
+.category:nth-child(2){background:linear-gradient(135deg,#8b5a20,#d2a34f)}
+.category:nth-child(3){background:linear-gradient(135deg,#392331,#8b4960)}
+.category:nth-child(4){background:linear-gradient(135deg,#5c1832,#b35b77)}
+.category:nth-child(5){background:linear-gradient(135deg,#594020,#b99554)}
+.category:nth-child(6){background:linear-gradient(135deg,#3c1727,#8d6071)}
+.category .emoji{font-size:36px;margin-bottom:auto}
+.category h3{font-family:Cinzel,serif;font-size:22px}
+.category p{font-size:12px;opacity:.9}
+.products-wrap{background:#fff}
+.product-toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px}
+.search{display:flex;border:1px solid var(--border);border-radius:30px;background:#fff;overflow:hidden;width:min(390px,100%)}
+.search input{border:0;outline:0;padding:11px 16px;width:100%}
+.search button{border:0;background:var(--wine);color:#fff;width:48px;cursor:pointer}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.product-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:.3s}
+.product-card:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(55,18,30,.15)}
+.product-image{height:260px;background:#f7eee8;position:relative;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.product-card:hover img{transform:scale(1.04)}
+.badge{position:absolute;top:13px;left:13px;background:var(--wine);color:#fff;border-radius:20px;padding:5px 10px;font-size:10px;font-weight:700}
+.wish{position:absolute;right:13px;top:13px;width:35px;height:35px;border:0;border-radius:50%;background:#fff;cursor:pointer;color:var(--wine);font-size:17px}
+.product-info{padding:20px}
+.product-info .category-label{font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.product-info h3{font-family:Cinzel,serif;color:var(--wine);font-size:20px;margin:4px 0}
+.product-info p{font-size:12px;color:var(--muted);min-height:40px}
+.stars{color:#d7a63f;font-size:13px;margin:8px 0}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.price{font-size:18px;font-weight:700;color:var(--wine)}
+.add{border:0;border-radius:25px;background:var(--wine);color:#fff;padding:9px 15px;cursor:pointer;font-size:12px;font-weight:700}
+.add:hover{background:var(--wine-dark)}
+.banner{margin-top:35px;border-radius:22px;padding:38px;background:linear-gradient(110deg,#4b0b20,#8e2748);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.banner h3{font-family:Cinzel,serif;font-size:28px;color:var(--gold-light)}
+.banner p{font-size:13px;color:#f4e5e8}
+.services{background:#fff7f1}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;text-align:center;transition:.3s}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.service-icon{font-size:38px}
+.service-card h3{font-family:Cinzel,serif;color:var(--wine);margin:8px 0}
+.service-card p{font-size:13px;color:var(--muted)}
+.contact{background:linear-gradient(135deg,#3b0a1b,#6f1833);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-card,.contact-form{padding:32px;border:1px solid rgba(255,255,255,.15);border-radius:20px;background:rgba(255,255,255,.07)}
+.contact-card h3,.contact-form h3{font-family:Cinzel,serif;color:var(--gold-light);font-size:25px;margin-bottom:18px}
+.contact-card p{margin:13px 0;color:#f4e8e9}
+.contact-card a{color:var(--gold-light)}
+.contact-form{background:#fff;color:var(--text)}
+.contact-form h3{color:var(--wine)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-form label{font-size:12px;font-weight:600;color:#5d5356}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--border);border-radius:10px;padding:11px 13px;margin:5px 0 14px;outline:0}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--wine);box-shadow:0 0 0 3px rgba(101,21,46,.08)}
+.contact-form textarea{min-height:120px;resize:vertical}
+footer{background:#220611;color:#d8c7cb;padding:35px 0;text-align:center;font-size:12px}
+footer strong{color:var(--gold)}
+footer .social{margin-top:10px;color:var(--gold-light)}
+@media(max-width:900px){
+    nav{display:none}.feature-grid{grid-template-columns:1fr 1fr}
+    .feature{border-bottom:1px solid var(--border);padding:12px}
+    .categories,.product-grid,.service-grid{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+    .navbar{min-height:70px}.brand h1{font-size:17px}
+    .brand img{width:46px;height:46px}.nav-actions{display:none}
+    .feature-grid,.categories,.product-grid,.service-grid{grid-template-columns:1fr}
+    .feature{border-right:0}.hero{min-height:520px}
+    .hero-content{padding:60px 0}.section{padding:60px 0}
+    .section-head h2{font-size:30px}.product-toolbar{align-items:stretch;flex-direction:column}
+    .banner{flex-direction:column;align-items:flex-start}
+    .form-row{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<div class="topbar">✨ Premium beauty • cosmetics • jewellery • skincare • makeup essentials</div>
 
 <header>
-
-    <div class="logo-area">
+<div class="container navbar">
+    <a href="#home" class="brand">
         <img src="ChatGPT Image Aug 8, 2026, 09_49_58 PM.png" alt="VRISHIN STORE Logo">
-
         <div>
             <h1>VRISHIN STORE</h1>
-            <p>& BEAUTY PARLOUR</p>
+            <span>& BEAUTY PARLOUR</span>
         </div>
-    </div>
+    </a>
 
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#events">Events</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#services">Beauty Parlour</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <div class="nav-actions">
+        <button class="icon-btn" title="Search" onclick="document.getElementById('searchBox').focus()">⌕</button>
+        <button class="icon-btn" title="Wishlist">♡</button>
+        <button class="icon-btn" title="Shopping Cart" onclick="showCart()">🛒<span class="cart-count" id="cartCount">0</span></button>
+    </div>
+</div>
 </header>
-
-
-<!-- ================= HOME ================= -->
 
 <main>
 
 <section id="home" class="hero">
-
+<div class="container">
     <div class="hero-content">
-
-        <h2>Welcome to <span>VRISHIN STORE</span></h2>
-
-        <p>
-            Your destination for premium cosmetics,
-            beauty products and professional beauty services.
-        </p>
-
-        <a href="#products" class="btn">Explore Products</a>
-
-        <a href="#contact" class="btn">Contact Us</a>
-
+        <div class="eyebrow">Welcome to your beauty destination</div>
+        <h2>Beauty that makes you <span>shine.</span></h2>
+        <p>Discover cosmetics, fragrances, face masks, jewellery and makeup essentials — plus professional ladies beauty parlour and bridal services.</p>
+        <div class="hero-buttons">
+            <a class="btn" href="#shop">Shop Collection</a>
+            <a class="btn btn-outline" href="#services">Explore Beauty Services</a>
+        </div>
     </div>
-
+</div>
 </section>
 
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-    <h2 class="section-title">About Us</h2>
-
-    <div class="about-content">
-
-        <p>
-            Welcome to <strong>VRISHIN STORE & BEAUTY PARLOUR</strong>.
-            We provide quality cosmetics, beauty products and
-            professional beauty services for our customers.
-        </p>
-
-        <br>
-
-        <p>
-            Our goal is to provide excellent products, friendly service
-            and a comfortable beauty experience at an affordable price.
-        </p>
-
-        <br>
-
-        <p>
-            <strong>Quality • Beauty • Style • Trust</strong>
-        </p>
-
-    </div>
-
+<section class="features">
+<div class="container feature-grid">
+    <div class="feature"><span>✓</span><div><b>Quality Products</b><small>Selected for you</small></div></div>
+    <div class="feature"><span>◆</span><div><b>Beautiful Choices</b><small>Beauty & style</small></div></div>
+    <div class="feature"><span>★</span><div><b>Personal Service</b><small>Friendly support</small></div></div>
+    <div class="feature"><span>♡</span><div><b>Beauty Parlour</b><small>Appointments available</small></div></div>
+</div>
 </section>
 
-
-<!-- ================= SERVICES ================= -->
-
-<section id="services" class="services">
-
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="cards">
-
-        <article class="card">
-
-            <div class="icon">💄</div>
-
-            <h3>Makeup</h3>
-
-            <p>
-                Professional makeup services for special occasions,
-                parties and celebrations.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="icon">💇</div>
-
-            <h3>Hair Styling</h3>
-
-            <p>
-                Modern and traditional hairstyles designed
-                according to your occasion.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="icon">✨</div>
-
-            <h3>Facial & Beauty Care</h3>
-
-            <p>
-                Beauty care services designed to provide
-                a relaxing and refreshing experience.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="icon">💅</div>
-
-            <h3>Nail Care</h3>
-
-            <p>
-                Professional nail care and styling services.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="icon">🌸</div>
-
-            <h3>Skin Care</h3>
-
-            <p>
-                Beauty and skincare services for your
-                regular self-care routine.
-            </p>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="icon">👰</div>
-
-            <h3>Bridal Beauty</h3>
-
-            <p>
-                Complete beauty services for your
-                special wedding occasions.
-            </p>
-
-        </article>
-
+<section id="categories" class="section">
+<div class="container">
+    <div class="section-head">
+        <div class="eyebrow">Shop by category</div>
+        <h2>Find Your Favorites</h2>
+        <p>Explore the latest additions to the VRISHIN STORE collection.</p>
     </div>
 
+    <div class="categories">
+        <a class="category" href="#shop"><div class="emoji">💄</div><h3>Makeup</h3><p>Makeup essentials for every look</p></a>
+        <a class="category" href="#shop"><div class="emoji">🌸</div><h3>Fragrance</h3><p>Perfumes for every occasion</p></a>
+        <a class="category" href="#shop"><div class="emoji">✨</div><h3>Skincare</h3><p>Face masks and care essentials</p></a>
+        <a class="category" href="#shop"><div class="emoji">💎</div><h3>Jewellery</h3><p>Made to shine and impress</p></a>
+        <a class="category" href="#shop"><div class="emoji">🧴</div><h3>Hair & Body</h3><p>Everyday personal care</p></a>
+        <a class="category" href="#shop"><div class="emoji">🎁</div><h3>Gift Ideas</h3><p>Beautiful choices for occasions</p></a>
+    </div>
+</div>
 </section>
 
+<section id="shop" class="section products-wrap">
+<div class="container">
+    <div class="section-head">
+        <div class="eyebrow">Featured collection</div>
+        <h2>Shop Our Products</h2>
+        <p>Choose from our cosmetics, beauty and lifestyle collection.</p>
+    </div>
 
-<!-- ================= PRODUCTS ================= -->
+    <div class="product-toolbar">
+        <div class="search">
+            <input id="searchBox" type="search" placeholder="Search products..." oninput="filterProducts()">
+            <button type="button">⌕</button>
+        </div>
+        <span id="productStatus" style="color:#756c6f;font-size:13px">6 featured products</span>
+    </div>
 
-<section id="products" class="products">
+    <div class="product-grid" id="productGrid">
 
-    <h2 class="section-title">Our Products</h2>
-
-    <div class="cards">
-
-        <article class="card product-card">
-
-            <img src="ChatGPT Image Aug 10, 2026, 08_17_48 PM.png"
-                 alt="Lipstick">
-
-            <h3>Lipstick</h3>
-
-            <p>
-                Stylish shades for everyday and special occasions.
-            </p>
-
-            <div class="price">View in Store</div>
-
+        <article class="product-card" data-name="lipstick makeup">
+            <div class="product-image">
+                <span class="badge">FEATURED</span>
+                <button class="wish">♡</button>
+                <img src="ChatGPT Image Aug 10, 2026, 08_17_48 PM.png" alt="Lipstick">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Makeup</div>
+                <h3>Lipstick</h3>
+                <p>Stylish shades for everyday and special occasions.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Lipstick')">Add to Cart</button></div>
+            </div>
         </article>
 
-
-        <article class="card product-card">
-
-            <img src="WhatsApp Image 2026-08-10 at 8.14.20 PM.jpeg"
-                 alt="Face Cream">
-
-            <h3>Face Cream</h3>
-
-            <p>
-                Beauty and skincare products for your daily routine.
-            </p>
-
-            <div class="price">View in Store</div>
-
+        <article class="product-card" data-name="face cream skincare">
+            <div class="product-image">
+                <span class="badge">POPULAR</span>
+                <button class="wish">♡</button>
+                <img src="WhatsApp Image 2026-08-10 at 8.14.20 PM.jpeg" alt="Face Cream">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Skincare</div>
+                <h3>Face Cream</h3>
+                <p>Beauty and skincare products for your daily routine.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Face Cream')">Add to Cart</button></div>
+            </div>
         </article>
 
+        <article class="product-card" data-name="perfume fragrance">
+            <div class="product-image">
+                <span class="badge">BEST SELLER</span>
+                <button class="wish">♡</button>
+                <img src="ChatGPT Image Aug 10, 2026, 08_10_44 PM.png" alt="Perfume">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Fragrance</div>
+                <h3>Perfumes</h3>
+                <p>Fragrances for different occasions and styles.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Perfume')">Add to Cart</button></div>
+            </div>
+        </article>
 
-        <article class="card product-card">
+        <article class="product-card" data-name="face mask skincare">
+            <div class="product-image">
+                <span class="badge">NEW</span>
+                <button class="wish">♡</button>
+                <img src="ChatGPT Image Aug 13, 2026, 09_35_23 PM.png" alt="Face Mask">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Skincare</div>
+                <h3>Face Mask</h3>
+                <p>A fresh mask for every skin mood.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Face Mask')">Add to Cart</button></div>
+            </div>
+        </article>
 
-            <img src="ChatGPT Image Aug 10, 2026, 08_10_44 PM.png"
-                 alt="Perfume">
+        <article class="product-card" data-name="jewellery jewelry">
+            <div class="product-image">
+                <span class="badge">TRENDING</span>
+                <button class="wish">♡</button>
+                <img src="ChatGPT Image Aug 13, 2026, 09_46_57 PM.png" alt="Jewellery">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Jewellery</div>
+                <h3>Jewellery</h3>
+                <p>Made to shine, made to impress.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Jewellery')">Add to Cart</button></div>
+            </div>
+        </article>
 
-            <h3>Perfumes</h3>
-
-            <p>
-                Fragrances for different occasions and styles.
-            </p>
-
-            <div class="price">View in Store</div>
-
+        <article class="product-card" data-name="makeup kit makeup">
+            <div class="product-image">
+                <span class="badge">NEW</span>
+                <button class="wish">♡</button>
+                <img src="ChatGPT Image Aug 13, 2026, 10_01_53 PM.png" alt="Makeup Kit">
+            </div>
+            <div class="product-info">
+                <div class="category-label">Makeup</div>
+                <h3>Makeup Kit</h3>
+                <p>Turn your look into a statement.</p>
+                <div class="stars">★★★★★</div>
+                <div class="product-bottom"><span class="price">View in Store</span><button class="add" onclick="addToCart('Makeup Kit')">Add to Cart</button></div>
+            </div>
         </article>
 
     </div>
 
+    <div class="banner">
+        <div>
+            <h3>Beauty services for your special day</h3>
+            <p>Ask us about ladies beauty parlour and bridal & marriage ceremony services.</p>
+        </div>
+        <a href="#contact" class="btn">Book / Enquire</a>
+    </div>
+</div>
 </section>
 
+<section id="services" class="section services">
+<div class="container">
+    <div class="section-head">
+        <div class="eyebrow">Beauty parlour</div>
+        <h2>Professional Services</h2>
+        <p>Beauty care and styling services for everyday occasions and special celebrations.</p>
+    </div>
 
-<!-- ================= EVENTS ================= -->
-
-<section id="events" class="events">
-
-    <h2 class="section-title">Latest Events & Offers</h2>
-
-    <article class="event-box">
-
-        <h3>🎉 Special Beauty Offer</h3>
-
-        <p>
-            Enjoy special offers on selected beauty services
-            and cosmetic products.
-        </p>
-
-    </article>
-
-
-    <article class="event-box">
-
-        <h3>💄 Festive Makeup</h3>
-
-        <p>
-            Book your festive makeup and beauty services
-            in advance.
-        </p>
-
-    </article>
-
-
-    <article class="event-box">
-
-        <h3>🌸 New Products</h3>
-
-        <p>
-            Visit VRISHIN STORE for our latest cosmetics
-            and beauty products.
-        </p>
-
-    </article>
-
+    <div class="service-grid">
+        <article class="service-card"><div class="service-icon">💄</div><h3>Makeup</h3><p>Professional makeup for parties and special occasions.</p></article>
+        <article class="service-card"><div class="service-icon">💇</div><h3>Hair Styling</h3><p>Modern and traditional hairstyles for your occasion.</p></article>
+        <article class="service-card"><div class="service-icon">✨</div><h3>Facial & Beauty Care</h3><p>Relaxing beauty care services for your routine.</p></article>
+        <article class="service-card"><div class="service-icon">💅</div><h3>Nail Care</h3><p>Professional nail care and styling services.</p></article>
+        <article class="service-card"><div class="service-icon">🌸</div><h3>Skin Care</h3><p>Beauty and skincare services for your self-care routine.</p></article>
+        <article class="service-card"><div class="service-icon">👰</div><h3>Bridal Beauty</h3><p>Complete beauty services for wedding occasions.</p></article>
+    </div>
+</div>
 </section>
 
+<section id="contact" class="section contact">
+<div class="container">
+    <div class="section-head">
+        <div class="eyebrow" style="color:#f5dfaa">Get in touch</div>
+        <h2 style="color:#f5dfaa">Contact VRISHIN STORE</h2>
+        <p style="color:#eadbdd">Contact us for products, appointments and beauty services.</p>
+    </div>
 
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <h2 class="section-title">Contact Us</h2>
-
-    <div class="contact-container">
-
-        <div class="contact-info">
-
-            <h3>VRISHIN STORE & BEAUTY PARLOUR</h3>
-
-            <p>📍 Address: VRISHIN STORE &amp; BEAUTY PARLOUR</strong><br>
-                Mahesh Complex, Near Jalaram Temple<br>
-                Sama, Vadodara, Gujarat, India<br><br>
-</p>
-
-            <p>📞 Phone: +91 9574408913</p>
-
-            <p>📧 Email: gairikpatel02@gmail.com</p>
-
-            <p>🕐 Opening Hours: 10:00 AM – 8:00 PM</p>
-
-            <p>
-                We would love to hear from you!
-                Contact us for product information,
-                appointments and beauty services.
-            </p>
-
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h3>Store Information</h3>
+            <p>📍 <b>Address</b><br>Mahesh Complex, Near Jalaram Temple<br>Sama, Vadodara, Gujarat, India</p>
+            <p>📞 <b>Phone</b><br><a href="tel:+919574408913">+91-9574408913</a></p>
+            <p>📧 <b>Email</b><br><a href="mailto:gairikpatel02@gmail.com">gairikpatel02@gmail.com</a></p>
+            <p>🕐 <b>Opening Hours</b><br>10:00 AM – 8:00 PM</p>
         </div>
 
-
-        <form class="contact-form">
-
-            <input type="text"
-                   placeholder="Your Name"
-                   required>
-
-            <input type="email"
-                   placeholder="Your Email"
-                   required>
-
-            <input type="tel"
-                   placeholder="Your Phone">
-
-            <textarea
-                placeholder="Your Message"
-                required></textarea>
-
-            <button type="submit" class="btn">
-                Send Message
-            </button>
-
-        </form>
-
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form onsubmit="sendMessage(event)">
+                <div class="form-row">
+                    <div><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
+                    <div><label for="phone">Phone</label><input id="phone" type="tel" placeholder="Your phone"></div>
+                </div>
+                <label for="email">Email</label>
+                <input id="email" type="email" required placeholder="Your email">
+                <label for="message">Message</label>
+                <textarea id="message" required placeholder="What can we help you with?"></textarea>
+                <button class="btn" type="submit">Send Message</button>
+            </form>
+        </div>
     </div>
-
+</div>
 </section>
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-    <p>
-        © 2026 <span>VRISHIN STORE & BEAUTY PARLOUR</span>.
-        All Rights Reserved.
-    </p>
-
-    <p>
-        Designed with ❤️ for VRISHIN STORE
-    </p>
-
+<div class="container">
+    <p>© 2026 <strong>VRISHIN STORE & BEAUTY PARLOUR</strong>. All Rights Reserved.</p>
+    <p class="social">Facebook &nbsp; | &nbsp; Instagram &nbsp; | &nbsp; Twitter</p>
+</div>
 </footer>
+
+<script>
+let cart = 0;
+
+function addToCart(product){
+    cart++;
+    document.getElementById("cartCount").textContent = cart;
+    alert(product + " added to your cart!");
+}
+
+function showCart(){
+    if(cart === 0){
+        alert("Your cart is currently empty.");
+    }else{
+        alert("You have " + cart + " item(s) in your cart.");
+    }
+}
+
+function filterProducts(){
+    const query = document.getElementById("searchBox").value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".product-card");
+    let visible = 0;
+
+    cards.forEach(card => {
+        const name = card.dataset.name;
+        const match = name.includes(query);
+        card.style.display = match ? "" : "none";
+        if(match) visible++;
+    });
+
+    document.getElementById("productStatus").textContent =
+        visible + (visible === 1 ? " product" : " products") + " found";
+}
+
+function sendMessage(event){
+    event.preventDefault();
+    alert("Thank you! Your message has been prepared. Please connect the form to a backend or email service to receive submissions.");
+}
+</script>
 
 </body>
 </html>
