@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -23,10 +24,6 @@ body{
     color:#fff;
     overflow-x:hidden;
 }
-
-/* =========================
-   GALAXY BACKGROUND
-========================= */
 
 body::before{
     content:"";
@@ -80,7 +77,6 @@ body::before{
     position:absolute;
     top:8%;
     width:100%;
-
     text-align:center;
 
     color:#8de8ff;
@@ -146,8 +142,6 @@ body::before{
     }
 }
 
-/* GALAXY RINGS */
-
 .main-planet::before{
     content:"";
     position:absolute;
@@ -177,8 +171,6 @@ body::before{
     box-shadow:
         0 0 80px rgba(40,100,255,.25);
 }
-
-/* VRISHIN TEXT */
 
 .planet-brand{
     position:relative;
@@ -261,11 +253,8 @@ body::before{
 .product-system.hide{
     opacity:0;
     transform:translateY(-180px) scale(.7);
-
     transition:all .8s ease;
 }
-
-/* CENTRAL PLANET */
 
 .central-vrishin{
     position:absolute;
@@ -300,8 +289,6 @@ body::before{
         0 0 140px rgba(0,140,255,.6);
 }
 
-/* ORBITS */
-
 .orbit{
     position:absolute;
 
@@ -321,14 +308,6 @@ body::before{
     animation-duration:25s;
 }
 
-.orbit2{
-    width:min(52vw,520px);
-    height:min(52vw,520px);
-
-    animation-duration:18s;
-    animation-direction:reverse;
-}
-
 @keyframes orbitRotate{
     from{
         transform:rotate(0deg);
@@ -338,8 +317,6 @@ body::before{
         transform:rotate(360deg);
     }
 }
-
-/* PRODUCT PLANETS */
 
 .product-planet{
     position:absolute;
@@ -391,8 +368,6 @@ body::before{
 
     pointer-events:none;
 }
-
-/* OUTER ORBIT */
 
 .orbit1 .product-planet:nth-child(1){
     top:-45px;
@@ -449,8 +424,6 @@ nav{
         1px solid rgba(100,220,255,.1);
 }
 
-/* LOGO */
-
 .logo{
     display:flex;
     align-items:center;
@@ -468,7 +441,6 @@ nav{
     height:48px;
 
     object-fit:contain;
-
     border-radius:50%;
 
     filter:
@@ -477,7 +449,6 @@ nav{
 
 nav ul{
     display:flex;
-
     list-style:none;
     gap:22px;
 }
@@ -741,6 +712,8 @@ section:not(#planetIntro){
     transition:
         transform .4s ease,
         box-shadow .4s ease;
+
+    cursor:pointer;
 }
 
 .product:hover{
@@ -753,8 +726,6 @@ section:not(#planetIntro){
         0 20px 70px
         rgba(0,180,255,.25);
 }
-
-/* BADGE */
 
 .badge{
     position:absolute;
@@ -774,8 +745,6 @@ section:not(#planetIntro){
     font-size:10px;
     font-weight:bold;
 }
-
-/* WISHLIST */
 
 .wish{
     position:absolute;
@@ -806,10 +775,6 @@ section:not(#planetIntro){
 .wish.active{
     color:#ff6c9c;
 }
-
-/* =========================
-   PRODUCT IMAGE
-========================= */
 
 .product-visual{
     height:220px;
@@ -858,8 +823,6 @@ section:not(#planetIntro){
         );
 }
 
-/* PRODUCT INFO */
-
 .product-info{
     text-align:center;
 }
@@ -896,8 +859,6 @@ section:not(#planetIntro){
     color:#7d9ca8;
 }
 
-/* ADD TO CART */
-
 .add{
     width:100%;
 
@@ -930,8 +891,6 @@ section:not(#planetIntro){
         0 0 25px rgba(90,220,255,.5);
 }
 
-/* WHATSAPP */
-
 .wa-mini{
     display:block;
 
@@ -942,6 +901,175 @@ section:not(#planetIntro){
     text-decoration:none;
 
     font-size:13px;
+}
+
+/* =========================
+   BRAND POPUP
+========================= */
+
+.brand-modal{
+    position:fixed;
+    inset:0;
+
+    z-index:6000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(12px);
+}
+
+.brand-modal.show{
+    display:flex;
+}
+
+.brand-box{
+    width:min(600px,92%);
+
+    max-height:85vh;
+
+    overflow:auto;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #071d2d,
+            #020914
+        );
+
+    border:
+        1px solid rgba(100,220,255,.45);
+
+    box-shadow:
+        0 0 80px rgba(0,180,255,.25);
+
+    text-align:center;
+}
+
+.brand-head{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.brand-head h2{
+    color:#8ceaff;
+
+    letter-spacing:3px;
+}
+
+.close-brand{
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.brand-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(160px,1fr));
+
+    gap:18px;
+
+    margin-top:20px;
+}
+
+.brand-card{
+    padding:25px 15px;
+
+    border-radius:20px;
+
+    background:
+        rgba(0,80,120,.25);
+
+    border:
+        1px solid rgba(100,220,255,.2);
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.brand-card:hover{
+    transform:translateY(-7px);
+
+    background:
+        rgba(0,150,210,.25);
+
+    box-shadow:
+        0 10px 35px rgba(0,190,255,.25);
+}
+
+.brand-card h3{
+    color:#fff;
+
+    font-size:21px;
+
+    letter-spacing:2px;
+}
+
+.brand-card p{
+    margin-top:8px;
+
+    color:#86ddf5;
+
+    font-size:12px;
+}
+
+/* =========================
+   BRAND PRODUCT DISPLAY
+========================= */
+
+.brand-products{
+    margin-top:25px;
+
+    display:none;
+}
+
+.brand-products.show{
+    display:block;
+}
+
+.brand-product-card{
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(0,50,80,.35);
+
+    border:1px solid rgba(100,220,255,.2);
+
+    margin-top:15px;
+}
+
+.brand-product-card h3{
+    color:#8ceaff;
+
+    margin-bottom:10px;
+}
+
+.brand-product-card p{
+    color:#c4e8f0;
+
+    line-height:1.7;
 }
 
 /* =========================
@@ -1185,6 +1313,50 @@ footer{
     cursor:pointer;
 }
 
+
+/* =========================
+   AMAZON-STYLE CART CONTROLS
+========================= */
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+.cart-item-info{flex:1;}
+.cart-item-info strong{display:block;color:#fff;font-size:16px;margin-bottom:6px;}
+.cart-item-price{color:#8ceaff;font-size:13px;}
+.cart-item-subtotal{font-weight:bold;color:#fff;font-size:17px;white-space:nowrap;}
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+.quantity-btn{
+    width:32px;height:32px;border-radius:8px;
+    border:1px solid rgba(100,220,255,.45);
+    background:rgba(0,100,160,.25);color:#fff;
+    cursor:pointer;font-size:18px;font-weight:bold;
+}
+.quantity-btn:hover{background:#68dcff;color:#002330;}
+.quantity-number{min-width:25px;text-align:center;font-weight:bold;}
+.remove-item{
+    margin-top:10px;background:none;border:none;color:#ff8da8;
+    cursor:pointer;font-size:12px;padding:0;
+}
+.remove-item:hover{text-decoration:underline;}
+.cart-summary{
+    margin-top:20px;padding-top:15px;
+    border-top:1px solid rgba(100,220,255,.2);
+}
+.cart-summary-row{display:flex;justify-content:space-between;margin:8px 0;color:#b9d9e5;}
+.cart-summary-row.total-row{font-size:23px;font-weight:bold;color:#fff;margin-top:15px;}
+.add-cart-brand{margin-top:18px;}
+.brand-price{font-size:24px;font-weight:bold;color:#fff;margin:14px 0 5px;}
+.brand-price-note{font-size:11px;color:#7d9ca8;}
+
 /* =========================
    MOBILE
 ========================= */
@@ -1239,11 +1411,6 @@ footer{
         height:92vw;
     }
 
-    .orbit2{
-        width:60vw;
-        height:60vw;
-    }
-
     .product{
         min-height:430px;
     }
@@ -1259,7 +1426,47 @@ footer{
     .address-card{
         padding:28px 20px;
     }
+
+    .brand-box{
+        padding:25px 18px;
+    }
 }
+</style>
+
+
+<style id="vrishin-voice-style">
+.voice-visualizer-overlay{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at center,#071b38 0%,#02030b 48%,#000 100%);overflow:hidden;}
+.voice-visualizer-overlay.show{display:flex;}
+.voice-space{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;}
+.voice-space:before{content:"";position:absolute;width:70vmax;height:70vmax;border-radius:50%;background:radial-gradient(circle,rgba(62,190,255,.10),transparent 58%);animation:voiceSpacePulse 2.2s ease-in-out infinite;}
+.voice-orbit{position:absolute;width:min(430px,70vw);height:min(430px,70vw);border:1px solid rgba(104,220,255,.30);border-radius:50%;transform:rotateX(66deg) rotateZ(15deg);animation:orbitSpin 7s linear infinite;box-shadow:0 0 45px rgba(77,185,255,.10);}
+.voice-orbit.two{width:min(520px,82vw);height:min(520px,82vw);transform:rotateX(66deg) rotateZ(-28deg);animation-duration:11s;animation-direction:reverse;border-color:rgba(194,104,255,.25);}
+.voice-core{position:relative;width:190px;height:190px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.22),rgba(76,182,255,.13) 28%,rgba(111,55,180,.18) 62%,rgba(0,0,0,.20));border:1px solid rgba(128,224,255,.55);box-shadow:0 0 35px rgba(70,204,255,.35),inset 0 0 35px rgba(164,91,255,.18);animation:voiceCoreFloat 2.1s ease-in-out infinite;z-index:2;}
+.voice-core:before,.voice-core:after{content:"";position:absolute;border-radius:50%;border:2px solid rgba(91,218,255,.28);inset:-18px;animation:coreRing 2s ease-out infinite;}
+.voice-core:after{inset:-38px;border-color:rgba(190,100,255,.18);animation-delay:.7s;}
+.voice-mic-symbol{font-size:70px;filter:drop-shadow(0 0 18px #72ddff);animation:micGlow 1.1s ease-in-out infinite alternate;}
+.voice-frequency{position:absolute;width:min(760px,92vw);height:150px;display:flex;align-items:center;justify-content:center;gap:5px;perspective:700px;transform:translateY(115px) rotateX(18deg);z-index:3;}
+.voice-frequency span{width:5px;height:22px;border-radius:99px;background:linear-gradient(to top,#55dfff,#c76cff);box-shadow:0 0 10px rgba(95,220,255,.7);transform-origin:center;animation:frequencyPulse .7s ease-in-out infinite alternate;}
+.voice-frequency span:nth-child(3n){animation-duration:.48s}.voice-frequency span:nth-child(4n){animation-duration:.9s}.voice-frequency span:nth-child(5n){animation-duration:.62s}
+.voice-listening-label{position:relative;margin-top:145px;color:#fff;font-size:27px;font-weight:700;letter-spacing:1px;text-shadow:0 0 20px rgba(110,220,255,.65);z-index:4;}
+.voice-listening-sub{margin-top:8px;color:#a8c9d9;font-size:14px;z-index:4;max-width:90vw;}
+.voice-close{margin-top:25px;padding:12px 24px;border-radius:999px;border:1px solid rgba(104,220,255,.55);background:rgba(4,30,55,.72);color:#fff;cursor:pointer;transition:.2s;z-index:4;}
+.voice-close:hover{background:rgba(104,220,255,.2);transform:translateY(-2px);}
+.voice-assistant{position:fixed;right:22px;bottom:22px;z-index:9998;display:flex;align-items:flex-end;gap:10px;}
+.voice-assistant-panel{display:none;width:300px;padding:16px;border:1px solid rgba(100,220,255,.25);border-radius:18px;background:rgba(3,15,29,.94);backdrop-filter:blur(16px);box-shadow:0 15px 45px rgba(0,0,0,.4);}
+.voice-assistant-panel.show{display:block;}
+.voice-assistant-title{color:#fff;font-weight:700;margin-bottom:8px}.voice-assistant-status{color:#9fc2d1;font-size:12px;line-height:1.5;margin-bottom:10px}.voice-assistant-input{display:flex;gap:7px}.voice-assistant-input input{flex:1;min-width:0;border:1px solid rgba(100,220,255,.25);border-radius:10px;background:rgba(255,255,255,.06);color:#fff;padding:9px}.voice-assistant-input button{border:0;border-radius:10px;background:#68dcff;color:#002330;padding:0 14px;font-weight:700;cursor:pointer}
+.voice-assistant-mic{width:56px;height:56px;border-radius:50%;border:1px solid rgba(104,220,255,.7);background:radial-gradient(circle,rgba(103,220,255,.3),rgba(20,45,70,.85));color:#fff;font-size:25px;cursor:pointer;box-shadow:0 0 24px rgba(80,205,255,.28);}
+.voice-assistant-mic.listening{animation:micButtonPulse .8s ease-in-out infinite alternate;}
+@keyframes orbitSpin{from{transform:rotateX(66deg) rotateZ(0deg)}to{transform:rotateX(66deg) rotateZ(360deg)}}
+@keyframes voiceCoreFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-9px) scale(1.025)}}
+@keyframes coreRing{0%{transform:scale(.78);opacity:.8}100%{transform:scale(1.16);opacity:0}}
+@keyframes micGlow{from{transform:scale(.94);filter:drop-shadow(0 0 10px #72ddff)}to{transform:scale(1.06);filter:drop-shadow(0 0 28px #c76cff)}}
+@keyframes frequencyPulse{from{transform:scaleY(.35) translateZ(0)}to{transform:scaleY(calc(.7 + var(--voice-bar, 1))) translateZ(20px)}}
+@keyframes voiceSpacePulse{0%,100%{opacity:.45;transform:scale(.9)}50%{opacity:.8;transform:scale(1.05)}}
+@keyframes micButtonPulse{from{transform:scale(1);box-shadow:0 0 18px rgba(80,205,255,.25)}to{transform:scale(1.1);box-shadow:0 0 40px rgba(80,205,255,.65)}}
+@media(max-width:600px){.voice-core{width:145px;height:145px}.voice-mic-symbol{font-size:54px}.voice-frequency{transform:translateY(90px)}.voice-listening-label{margin-top:115px;font-size:23px}.voice-frequency span{width:4px}.voice-assistant{right:12px;bottom:12px}.voice-assistant-panel{width:min(300px,calc(100vw - 90px));}}
+@media(prefers-reduced-motion:reduce){.voice-orbit,.voice-core,.voice-core:before,.voice-core:after,.voice-mic-symbol,.voice-frequency span,.voice-space:before,.voice-assistant-mic{animation:none!important}}
 </style>
 </head>
 
@@ -1273,73 +1480,73 @@ footer{
 
 <section id="planetIntro">
 
-    <div class="intro-title">
-        WELCOME TO THE VRISHIN GALAXY
+```
+<div class="intro-title">
+    WELCOME TO THE VRISHIN GALAXY
+</div>
+
+<div class="main-planet" id="mainPlanet">
+
+    <div class="planet-brand">
+
+        <h1>VRISHIN</h1>
+
+        <p>
+            BEAUTY BEYOND THE GALAXY
+        </p>
+
     </div>
 
-    <div class="main-planet" id="mainPlanet">
+</div>
 
-        <div class="planet-brand">
+<div class="click-message" id="clickMessage">
+    ✦ CLICK THE PLANET TO EXPLORE PRODUCTS ✦
+</div>
 
-            <h1>VRISHIN</h1>
+<!-- PRODUCT SOLAR SYSTEM -->
 
-            <p>
-                BEAUTY BEYOND THE GALAXY
-            </p>
+<div class="product-system" id="productSystem">
 
+    <div class="central-vrishin">
+        VRISHIN
+    </div>
+
+    <div class="orbit orbit1">
+
+        <div class="product-planet">
+            🌸
+            <span>Perfume</span>
+        </div>
+
+        <div class="product-planet">
+            💄
+            <span>Lipstick</span>
+        </div>
+
+        <div class="product-planet">
+            🧴
+            <span>Moisturizer</span>
+        </div>
+
+        <div class="product-planet">
+            ✨
+            <span>Face Mask</span>
+        </div>
+
+        <div class="product-planet">
+            💎
+            <span>Jewellery</span>
+        </div>
+
+        <div class="product-planet">
+            🧴
+            <span>Body Lotion</span>
         </div>
 
     </div>
 
-    <div class="click-message" id="clickMessage">
-        ✦ CLICK THE PLANET TO EXPLORE PRODUCTS ✦
-    </div>
-
-    <!-- PRODUCT SOLAR SYSTEM -->
-
-    <div class="product-system" id="productSystem">
-
-        <div class="central-vrishin">
-            VRISHIN
-        </div>
-
-        <!-- OUTER ORBIT -->
-
-        <div class="orbit orbit1">
-
-            <div class="product-planet">
-                🌸
-                <span>Premium Perfume</span>
-            </div>
-
-            <div class="product-planet">
-                🎭
-                <span>Beauty Face Mask</span>
-            </div>
-
-            <div class="product-planet">
-                🧴
-                <span>Body Lotion</span>
-            </div>
-
-            <div class="product-planet">
-                ✨
-                <span>Premium Moisturizer</span>
-            </div>
-
-            <div class="product-planet">
-                💎
-                <span>Elegant Jewellery</span>
-            </div>
-
-            <div class="product-planet">
-                💄
-                <span>Heavenly Lipstick</span>
-            </div>
-
-        </div>
-
-    </div>
+</div>
+```
 
 </section>
 
@@ -1349,49 +1556,51 @@ footer{
 
 <nav>
 
-    <div class="logo">
+```
+<div class="logo">
 
-        <img
-            src="logo.png"
-            alt="VRISHIN STORE Logo"
-        >
+    <img
+        src="logo.png"
+        alt="VRISHIN STORE Logo"
+    >
 
-        <span>VRISHIN</span>
+    <span>VRISHIN</span>
 
-    </div>
+</div>
 
-    <ul>
+<ul>
 
-        <li>
-            <a href="#home">HOME</a>
-        </li>
+    <li>
+        <a href="#home">HOME</a>
+    </li>
 
-        <li>
-            <a href="#shop">SHOP</a>
-        </li>
+    <li>
+        <a href="#shop">SHOP</a>
+    </li>
 
-        <li>
-            <a href="#about">ABOUT</a>
-        </li>
+    <li>
+        <a href="#about">ABOUT</a>
+    </li>
 
-        <li>
-            <a href="#services">SERVICES</a>
-        </li>
+    <li>
+        <a href="#services">SERVICES</a>
+    </li>
 
-        <li>
-            <a href="#contact">CONTACT</a>
-        </li>
+    <li>
+        <a href="#contact">CONTACT</a>
+    </li>
 
-    </ul>
+</ul>
 
-    <button
-        class="cart-btn"
-        onclick="openCart()">
+<button
+    class="cart-btn"
+    onclick="openCart()">
 
-        🛒
-        <span id="cartCount">0</span>
+    🛒
+    <span id="cartCount">0</span>
 
-    </button>
+</button>
+```
 
 </nav>
 
@@ -1401,21 +1610,23 @@ footer{
 
 <section id="home">
 
-    <div class="section-tag">
-        BEAUTY • STYLE • COSMETICS
-    </div>
+```
+<div class="section-tag">
+    BEAUTY • STYLE • COSMETICS
+</div>
 
-    <h2 class="section-title">
-        Beauty Beyond<br>
-        The Galaxy
-    </h2>
+<h2 class="section-title">
+    Beauty Beyond<br>
+    The Galaxy
+</h2>
 
-    <p class="section-description">
+<p class="section-description">
 
-        Welcome to VRISHIN STORE & BEAUTY PARLOUR,
-        where beauty, fashion and creativity come together.
+    Welcome to VRISHIN STORE & BEAUTY PARLOUR,
+    where beauty, fashion and creativity come together.
 
-    </p>
+</p>
+```
 
 </section>
 
@@ -1425,33 +1636,35 @@ footer{
 
 <section class="box-section">
 
-    <div class="section-tag">
-        YOUR JOURNEY BEGINS
-    </div>
+```
+<div class="section-tag">
+    YOUR JOURNEY BEGINS
+</div>
 
-    <h2 class="section-title">
-        Open The Universe
-    </h2>
+<h2 class="section-title">
+    Open The Universe
+</h2>
 
-    <div class="box-wrapper">
+<div class="box-wrapper">
 
-        <div class="box-body">
+    <div class="box-body">
 
-            <div class="box-ribbon"></div>
+        <div class="box-ribbon"></div>
 
-            <div class="box-brand">
-                VRISHIN
-            </div>
-
-        </div>
-
-        <div class="box-lid">
-
-            <div class="box-ribbon"></div>
-
+        <div class="box-brand">
+            VRISHIN
         </div>
 
     </div>
+
+    <div class="box-lid">
+
+        <div class="box-ribbon"></div>
+
+    </div>
+
+</div>
+```
 
 </section>
 
@@ -1461,509 +1674,477 @@ footer{
 
 <section id="shop">
 
-    <div class="section-tag">
-        VRISHIN COLLECTION
-    </div>
+```
+<div class="section-tag">
+    VRISHIN COLLECTION
+</div>
 
-    <h2 class="section-title">
-        Explore Our Products
-    </h2>
+<h2 class="section-title">
+    Explore Our Products
+</h2>
 
-    <p class="section-description">
+<p class="section-description">
+    Click any product to discover the brands available at VRISHIN STORE.
+</p>
 
-        Discover beauty, skincare, fragrance,
-        jewellery and premium stationery.
 
-    </p>
+<!-- FRAGRANCE -->
 
-    <!-- FRAGRANCE -->
+<div class="category-title">
+    🌸 FRAGRANCE
+</div>
 
-    <div class="category-title">
-        🌸 FRAGRANCE
-    </div>
+<div class="product-grid">
 
-    <div class="product-grid">
+    <article class="product"
+        onclick="openBrands('Perfume')">
 
-        <article class="product">
+        <span class="badge">
+            BESTSELLER
+        </span>
 
-            <span class="badge">
-                BESTSELLER
-            </span>
+        <button
+            class="wish"
+            onclick="event.stopPropagation(); toggleWish(this)">
+            ♡
+        </button>
 
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
+        <div class="product-visual">
 
-            <div class="product-visual">
+            <img
+                src="perfume.png"
+                alt="Perfume"
+            >
 
-                <img
-                    src="perfume.png"
-                    alt="Premium Perfume"
-                >
+        </div>
 
+        <div class="product-info">
+
+            <small>FRAGRANCE</small>
+
+            <h3>Perfume</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-            <div class="product-info">
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-                <small>
-                    FRAGRANCE
-                </small>
+        </div>
 
-                <h3>
-                    Premium Perfume
-                </h3>
+    </article>
 
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
+</div>
 
-                <div class="price">
 
-                    <strong>
-                        ₹799
-                    </strong>
+<!-- MAKEUP -->
 
-                    <span class="old">
-                        ₹999
-                    </span>
+<div class="category-title">
+    💄 MAKEUP
+</div>
 
-                </div>
+<div class="product-grid">
 
-                <button
-                    class="add"
-                    onclick="addToCart('Premium Perfume',799)">
+    <!-- LIPSTICK -->
 
-                    🛒 Add to Cart
+    <article class="product"
+        onclick="openBrands('Lipstick')">
 
-                </button>
+        <span class="badge">
+            NEW
+        </span>
 
-                <a
-                    class="wa-mini"
-                    target="_blank"
-                    href="https://wa.me/919574408913?text=I%20want%20to%20order%20Premium%20Perfume">
+        <button
+            class="wish"
+            onclick="event.stopPropagation(); toggleWish(this)">
+            ♡
+        </button>
 
-                    💬 Order on WhatsApp
+        <div class="product-visual">
 
-                </a>
+            <img
+                src="lipstick.png"
+                alt="Lipstick"
+            >
 
+        </div>
+
+        <div class="product-info">
+
+            <small>LIPSTICK</small>
+
+            <h3>Lipstick</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-        </article>
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-    </div>
+        </div>
 
-    <!-- SKINCARE -->
+    </article>
 
-    <div class="category-title">
-        🧴 SKINCARE
-    </div>
+</div>
 
-    <div class="product-grid">
 
-        <!-- FACE MASK -->
+<!-- SKINCARE -->
 
-        <article class="product">
+<div class="category-title">
+    🧴 SKINCARE
+</div>
 
-            <span class="badge">
-                NEW
-            </span>
+<div class="product-grid">
 
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
+    <!-- MOISTURIZER -->
 
-            <div class="product-visual">
+    <article class="product"
+        onclick="openBrands('Moisturizer')">
 
-                <img
-                    src="facemask.png"
-                    alt="Beauty Face Mask"
-                >
+        <span class="badge">
+            PREMIUM
+        </span>
 
+        <div class="product-visual">
+
+            <img
+                src="moisturizer.png"
+                alt="Moisturizer"
+            >
+
+        </div>
+
+        <div class="product-info">
+
+            <small>SKINCARE</small>
+
+            <h3>Moisturizer</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-            <div class="product-info">
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-                <small>
-                    SKINCARE
-                </small>
+        </div>
 
-                <h3>
-                    Beauty Face Mask
-                </h3>
+    </article>
 
-                <div class="stars-rating">
-                    ★★★★☆
-                </div>
 
-                <div class="price">
+    <!-- FACE MASK -->
 
-                    <strong>
-                        ₹299
-                    </strong>
+    <article class="product"
+        onclick="openBrands('Face Mask')">
 
-                    <span class="old">
-                        ₹399
-                    </span>
+        <span class="badge">
+            NEW
+        </span>
 
-                </div>
+        <div class="product-visual">
 
-                <button
-                    class="add"
-                    onclick="addToCart('Beauty Face Mask',299)">
+            <img
+                src="facemask.png"
+                alt="Face Mask"
+            >
 
-                    🛒 Add to Cart
+        </div>
 
-                </button>
+        <div class="product-info">
 
-                <a
-                    class="wa-mini"
-                    target="_blank"
-                    href="https://wa.me/919574408913?text=I%20want%20to%20order%20Beauty%20Face%20Mask">
+            <small>SKINCARE</small>
 
-                    💬 Order on WhatsApp
+            <h3>Face Mask</h3>
 
-                </a>
-
+            <div class="stars-rating">
+                ★★★★☆
             </div>
 
-        </article>
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-        <!-- BODY LOTION -->
+        </div>
 
-        <article class="product">
+    </article>
 
-            <span class="badge">
-                POPULAR
-            </span>
 
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
+    <!-- BODY LOTION -->
 
-            <div class="product-visual">
+    <article class="product"
+        onclick="openBrands('Body Lotion')">
 
-                <img
-                    src="bodylotion.png"
-                    alt="Body Lotion"
-                >
+        <span class="badge">
+            POPULAR
+        </span>
 
+        <div class="product-visual">
+
+            <img
+                src="bodylotion.png"
+                alt="Body Lotion"
+            >
+
+        </div>
+
+        <div class="product-info">
+
+            <small>BODY CARE</small>
+
+            <h3>Body Lotion</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-            <div class="product-info">
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-                <small>
-                    BODY CARE
-                </small>
+        </div>
 
-                <h3>
-                    Body Lotion
-                </h3>
+    </article>
 
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
 
-                <div class="price">
+    <!-- SUNSCREEN -->
 
-                    <strong>
-                        ₹449
-                    </strong>
+    <article class="product"
+        onclick="openBrands('Sunscreen Lotion')">
 
-                    <span class="old">
-                        ₹549
-                    </span>
+        <span class="badge">
+            DAILY CARE
+        </span>
 
-                </div>
+        <div class="product-visual">
 
-                <button
-                    class="add"
-                    onclick="addToCart('Body Lotion',449)">
+            <img
+                src="sunscreen.png"
+                alt="Sunscreen Lotion"
+            >
 
-                    🛒 Add to Cart
+        </div>
 
-                </button>
+        <div class="product-info">
 
+            <small>SKINCARE</small>
+
+            <h3>Sunscreen Lotion</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-        </article>
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-        <!-- MOISTURIZER -->
+        </div>
 
-        <article class="product">
+    </article>
 
-            <span class="badge">
-                PREMIUM
-            </span>
 
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
+    <!-- FACE WASH -->
 
-            <div class="product-visual">
+    <article class="product"
+        onclick="openBrands('Face Wash')">
 
-                <img
-                    src="moisturizer.png"
-                    alt="Premium Moisturizer"
-                >
+        <span class="badge">
+            POPULAR
+        </span>
 
+        <div class="product-visual">
+
+            <img
+                src="facewash.png"
+                alt="Face Wash"
+            >
+
+        </div>
+
+        <div class="product-info">
+
+            <small>FACE CARE</small>
+
+            <h3>Face Wash</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-            <div class="product-info">
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-                <small>
-                    SKINCARE
-                </small>
+        </div>
 
-                <h3>
-                    Premium Moisturizer
-                </h3>
+    </article>
 
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
 
-                <div class="price">
+    <!-- CREAM -->
 
-                    <strong>
-                        ₹399
-                    </strong>
+    <article class="product"
+        onclick="openBrands('Cream')">
 
-                    <span class="old">
-                        ₹499
-                    </span>
+        <span class="badge">
+            POPULAR
+        </span>
 
-                </div>
+        <div class="product-visual">
 
-                <button
-                    class="add"
-                    onclick="addToCart('Premium Moisturizer',399)">
+            <img
+                src="cream.png"
+                alt="Cream"
+            >
 
-                    🛒 Add to Cart
+        </div>
 
-                </button>
+        <div class="product-info">
 
+            <small>SKINCARE</small>
+
+            <h3>Cream</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-        </article>
+            <p style="margin-top:15px;color:#8ceaff;">
+                Click to view available brands
+            </p>
 
-    </div>
+        </div>
 
-    <!-- JEWELLERY -->
+    </article>
 
-    <div class="category-title">
-        💎 JEWELLERY
-    </div>
+</div>
 
-    <div class="product-grid">
 
-        <article class="product">
+<!-- JEWELLERY -->
 
-            <span class="badge">
-                TRENDING
-            </span>
+<div class="category-title">
+    💎 JEWELLERY
+</div>
 
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
+<div class="product-grid">
 
-            <div class="product-visual">
+    <article class="product">
 
-                <img
-                    src="ChatGPT Image Aug 13, 2026, 09_46_57 PM.png"
-                    alt="Elegant Jewellery"
-                >
+        <span class="badge">
+            TRENDING
+        </span>
 
+        <div class="product-visual">
+
+            <img
+                src="ChatGPT Image Aug 13, 2026, 09_46_57 PM.png"
+                alt="Jewellery"
+            >
+
+        </div>
+
+        <div class="product-info">
+
+            <small>JEWELLERY</small>
+
+            <h3>Elegant Jewellery</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-            <div class="product-info">
+        </div>
 
-                <small>
-                    JEWELLERY
-                </small>
+    </article>
 
-                <h3>
-                    Elegant Jewellery
-                </h3>
+</div>
 
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
 
-                <div class="price">
+<!-- STATIONERY -->
 
-                    <strong>
-                        ₹1,499
-                    </strong>
+<div class="category-title">
+    ✏️ STATIONERY
+</div>
 
-                    <span class="old">
-                        ₹1,999
-                    </span>
+<div class="product-grid">
 
-                </div>
+    <article class="product">
 
-                <button
-                    class="add"
-                    onclick="addToCart('Elegant Jewellery',1499)">
+        <span class="badge">
+            PREMIUM
+        </span>
 
-                    🛒 Add to Cart
+        <div class="product-visual">
 
-                </button>
+            <img
+                src="pens.png"
+                alt="Stationery"
+            >
 
+        </div>
+
+        <div class="product-info">
+
+            <small>STATIONERY</small>
+
+            <h3>Stationery</h3>
+
+            <div class="stars-rating">
+                ★★★★★
             </div>
 
-        </article>
+        </div>
 
-    </div>
+    </article>
 
-    <!-- MAKEUP -->
-
-    <div class="category-title">
-        💄 MAKEUP
-    </div>
-
-    <div class="product-grid">
-
-        <article class="product">
-
-            <span class="badge">
-                NEW
-            </span>
-
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
-
-            <div class="product-visual">
-
-                <img
-                    src="lipstick.png"
-                    alt="Heavenly Lipstick"
-                >
-
-            </div>
-
-            <div class="product-info">
-
-                <small>
-                    LIPSTICK
-                </small>
-
-                <h3>
-                    Heavenly Lipstick
-                </h3>
-
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-
-                    <strong>
-                        ₹499
-                    </strong>
-
-                    <span class="old">
-                        ₹599
-                    </span>
-
-                </div>
-
-                <button
-                    class="add"
-                    onclick="addToCart('Heavenly Lipstick',499)">
-
-                    🛒 Add to Cart
-
-                </button>
-
-            </div>
-
-        </article>
-
-    </div>
-
-    <!-- STATIONERY -->
-
-    <div class="category-title">
-        ✏️ STATIONERY
-    </div>
-
-    <div class="product-grid">
-
-        <article class="product">
-
-            <span class="badge">
-                PREMIUM
-            </span>
-
-            <button
-                class="wish"
-                onclick="toggleWish(this)">
-                ♡
-            </button>
-
-            <div class="product-visual">
-
-                <img
-                    src="pens.png"
-                    alt="Premium Stationery"
-                >
-
-            </div>
-
-            <div class="product-info">
-
-                <small>
-                    STATIONERY
-                </small>
-
-                <h3>
-                    Premium Stationery
-                </h3>
-
-                <div class="stars-rating">
-                    ★★★★★
-                </div>
-
-                <div class="price">
-
-                    <strong>
-                        ₹299
-                    </strong>
-
-                    <span class="old">
-                        ₹399
-                    </span>
-
-                </div>
-
-                <button
-                    class="add"
-                    onclick="addToCart('Premium Stationery',299)">
-
-                    🛒 Add to Cart
-
-                </button>
-
-            </div>
-
-        </article>
-
-    </div>
+</div>
+```
 
 </section>
+
+<!-- =========================
+     BRAND POPUP
+========================= -->
+
+<div class="brand-modal" id="brandModal">
+
+```
+<div class="brand-box">
+
+    <div class="brand-head">
+
+        <h2 id="brandTitle">
+            Available Brands
+        </h2>
+
+        <button
+            class="close-brand"
+            onclick="closeBrands()">
+            ×
+        </button>
+
+    </div>
+
+    <p style="color:#b9d9e5;">
+        Select a company to view its products.
+    </p>
+
+    <div class="brand-list" id="brandList">
+    </div>
+
+    <div
+        class="brand-products"
+        id="brandProducts">
+    </div>
+
+</div>
+```
+
+</div>
 
 <!-- =========================
      ABOUT
@@ -1971,22 +2152,24 @@ footer{
 
 <section id="about">
 
-    <div class="section-tag">
-        OUR STORY
-    </div>
+```
+<div class="section-tag">
+    OUR STORY
+</div>
 
-    <h2 class="section-title">
-        More Than<br>
-        A Store
-    </h2>
+<h2 class="section-title">
+    More Than<br>
+    A Store
+</h2>
 
-    <p class="section-description">
+<p class="section-description">
 
-        VRISHIN STORE brings cosmetics,
-        skincare, fragrance, jewellery and lifestyle
-        products together in one modern destination.
+    VRISHIN STORE brings cosmetics,
+    skincare, fragrance, jewellery and lifestyle
+    products together in one modern destination.
 
-    </p>
+</p>
+```
 
 </section>
 
@@ -1996,45 +2179,39 @@ footer{
 
 <section id="services">
 
-    <div class="section-tag">
-        BEAUTY PARLOUR
+```
+<div class="section-tag">
+    BEAUTY PARLOUR
+</div>
+
+<h2 class="section-title">
+    Your Beauty Universe
+</h2>
+
+<div class="services">
+
+    <div class="service">
+        <span>💇</span>
+        Hair Care
     </div>
 
-    <h2 class="section-title">
-        Your Beauty Universe
-    </h2>
-
-    <div class="services">
-
-        <div class="service">
-
-            <span>💇</span>
-            Hair Care
-
-        </div>
-
-        <div class="service">
-
-            <span>💄</span>
-            Makeup
-
-        </div>
-
-        <div class="service">
-
-            <span>✨</span>
-            Beauty Care
-
-        </div>
-
-        <div class="service">
-
-            <span>💅</span>
-            Nail Care
-
-        </div>
-
+    <div class="service">
+        <span>💄</span>
+        Makeup
     </div>
+
+    <div class="service">
+        <span>✨</span>
+        Beauty Care
+    </div>
+
+    <div class="service">
+        <span>💅</span>
+        Nail Care
+    </div>
+
+</div>
+```
 
 </section>
 
@@ -2044,86 +2221,71 @@ footer{
 
 <section id="contact">
 
-    <div class="section-tag">
-        CONTACT VRISHIN
-    </div>
+```
+<div class="section-tag">
+    CONTACT VRISHIN
+</div>
 
-    <h2 class="section-title">
-        Let's Connect
-    </h2>
+<h2 class="section-title">
+    Let's Connect
+</h2>
 
-    <p class="section-description">
+<p class="section-description">
 
-        Contact us to order products or learn more
-        about our beauty services.
+    Contact us to order products or learn more
+    about our beauty services.
 
+</p>
+
+<a
+    class="contact-button"
+    target="_blank"
+    href="https://wa.me/919574408913">
+
+    💬 CONTACT ON WHATSAPP
+
+</a>
+
+<div class="address-card">
+
+    <h3>
+        📍 VRISHIN STORE & BEAUTY PARLOUR
+    </h3>
+
+    <p>
+        9, Mahesh Complex,<br>
+        Near Jalaram Temple,<br>
+        Sama, Vadodara,<br>
+        Gujarat, India
     </p>
 
-    <a
-        class="contact-button"
-        target="_blank"
-        href="https://wa.me/919574408913">
+    <br>
 
-        💬 CONTACT ON WHATSAPP
+    <p>
+        📞 Contact:
+        <a href="tel:+919574408913">
+            +91 95744 08913
+        </a>
+    </p>
 
-    </a>
+    <p>
+        💬 WhatsApp:
+        <a
+            target="_blank"
+            href="https://wa.me/919574408913">
+            +91 95744 08913
+        </a>
+    </p>
 
-    <div class="address-card">
+    <p>
+        📧 Email:
+        <a href="mailto:Vrishinkanganstore@gmail.com">
+            Vrishinkanganstore@gmail.com
+        </a>
+    </p>
 
-        <h3>
-            📍 VRISHIN STORE & BEAUTY PARLOUR
-        </h3>
-
-        <p>
-
-            9, Mahesh Complex,<br>
-            Near Jalaram Temple,<br>
-            Sama, Vadodara,<br>
-            Gujarat, India
-
-        </p>
-
-        <br>
-
-        <p>
-
-            📞 Contact:
-
-            <a href="tel:+919574408913">
-                +91 95744 08913
-            </a>
-
-        </p>
-
-        <p>
-
-            💬 WhatsApp:
-
-            <a
-                target="_blank"
-                href="https://wa.me/919574408913">
-
-                +91 95744 08913
-
-            </a>
-            <a 
-            target="blank"
-            href="https://mail.google.com/mail/u/0/?ogbl#inbox">
-        Vrishinkanganstore@gmail.com
-    </a>
-
-        </p>
-        <p>
-            📧 Email :
-            <a 
-            
-            target="blank"
-            href="https://mail.google.com/mail/u/0/?ogbl#inbox">
-        Vrishinkanganstore@gmail.com
-    </a>
-        </p>
-
-    </div>
+</div>
+```
 
 </section>
 
@@ -2133,23 +2295,27 @@ footer{
 
 <section class="final-section">
 
-    <div class="section-tag">
-        BEAUTY BEYOND THE GALAXY
-    </div>
+```
+<div class="section-tag">
+    BEAUTY BEYOND THE GALAXY
+</div>
 
-    <div class="final-logo">
-        VRISHIN
-    </div>
+<div class="final-logo">
+    VRISHIN
+</div>
 
-    <p>
-        STORE & BEAUTY PARLOUR
-    </p>
+<p>
+    STORE & BEAUTY PARLOUR
+</p>
+```
 
 </section>
 
 <footer>
 
-    © 2026 VRISHIN STORE & BEAUTY PARLOUR
+```
+© 2026 VRISHIN STORE & BEAUTY PARLOUR
+```
 
 </footer>
 
@@ -2159,44 +2325,46 @@ footer{
 
 <div class="cart-modal" id="cartModal">
 
-    <div class="cart-box">
+```
+<div class="cart-box">
 
-        <div class="cart-head">
+    <div class="cart-head">
 
-            <h2>
-                Your Cart
-            </h2>
-
-            <button
-                class="close-cart"
-                onclick="closeCart()">
-
-                ×
-
-            </button>
-
-        </div>
-
-        <div id="cartItems">
-            Your cart is empty.
-        </div>
-
-        <div class="cart-total">
-
-            Total:
-            ₹<span id="cartTotal">0</span>
-
-        </div>
+        <h2>
+            Your Cart
+        </h2>
 
         <button
-            class="checkout"
-            onclick="checkoutWhatsApp()">
+            class="close-cart"
+            onclick="closeCart()">
 
-            ORDER ON WHATSAPP
+            ×
 
         </button>
 
     </div>
+
+    <div id="cartItems">
+        Your cart is empty.
+    </div>
+
+    <div class="cart-total">
+
+        Total:
+        ₹<span id="cartTotal">0</span>
+
+    </div>
+
+    <button
+        class="checkout"
+        onclick="checkoutWhatsApp()">
+
+        ORDER ON WHATSAPP
+
+    </button>
+
+</div>
+```
 
 </div>
 
@@ -2241,6 +2409,7 @@ mainPlanet.addEventListener(
     }
 );
 
+
 /* =========================
    REMOVE PLANETS ON SCROLL
 ========================= */
@@ -2284,6 +2453,7 @@ window.addEventListener(
     }
 );
 
+
 /* =========================
    WISHLIST
 ========================= */
@@ -2308,117 +2478,272 @@ function toggleWish(button){
 
 }
 
+
+/* =========================
+   BRAND DATABASE
+========================= */
+
+const productBrands = {
+    "Perfume": [
+        {name:"Patel", price:499, description:"Patel perfumes available at VRISHIN STORE."},
+        {name:"Denver", price:699, description:"Denver perfumes available at VRISHIN STORE."}
+    ],
+    "Lipstick": [
+        {name:"Lakme", price:399, description:"Lakme lipsticks available at VRISHIN STORE."},
+        {name:"Blue Heaven", price:249, description:"Blue Heaven lipsticks available at VRISHIN STORE."}
+    ],
+    "Moisturizer": [
+        {name:"Lakme", price:349, description:"Lakme moisturizers available at VRISHIN STORE."},
+        {name:"Garnier", price:299, description:"Garnier moisturizers available at VRISHIN STORE."},
+        {name:"Ponds", price:279, description:"Ponds moisturizers available at VRISHIN STORE."}
+    ],
+    "Face Mask": [
+        {name:"Lakme", price:199, description:"Lakme face masks available at VRISHIN STORE."},
+        {name:"Ponds", price:179, description:"Ponds face masks available at VRISHIN STORE."}
+    ],
+    "Body Lotion": [
+        {name:"Lakme", price:349, description:"Lakme body lotions available at VRISHIN STORE."},
+        {name:"Ponds", price:299, description:"Ponds body lotions available at VRISHIN STORE."}
+    ],
+    "Sunscreen Lotion": [
+        {name:"Lakme", price:499, description:"Lakme sunscreen lotions available at VRISHIN STORE."},
+        {name:"Ponds", price:399, description:"Ponds sunscreen lotions available at VRISHIN STORE."}
+    ],
+    "Face Wash": [
+        {name:"Garnier", price:249, description:"Garnier face washes available at VRISHIN STORE."},
+        {name:"Denver", price:299, description:"Denver face washes available at VRISHIN STORE."}
+    ],
+    "Cream": [
+        {name:"Garnier", price:329, description:"Garnier creams available at VRISHIN STORE."},
+        {name:"Lakme", price:379, description:"Lakme creams available at VRISHIN STORE."},
+        {name:"Ponds", price:299, description:"Ponds creams available at VRISHIN STORE."}
+    ]
+};
+
+
+/* =========================
+   OPEN BRAND POPUP
+========================= */
+
+function openBrands(productName){
+
+    const modal =
+    document.getElementById("brandModal");
+
+    const title =
+    document.getElementById("brandTitle");
+
+    const brandList =
+    document.getElementById("brandList");
+
+    const brandProducts =
+    document.getElementById("brandProducts");
+
+    title.innerHTML =
+    productName + " Brands";
+
+    brandList.innerHTML = "";
+
+    brandProducts.classList.remove("show");
+
+    const brands =
+    productBrands[productName] || [];
+
+    brands.forEach(function(brand){
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "brand-card";
+
+        card.innerHTML = `
+
+            <h3>
+                ${brand.name}
+            </h3>
+
+            <p>
+                View ${productName}
+            </p>
+
+        `;
+
+        card.onclick = function(){
+
+            showBrandProduct(
+                productName,
+                brand.name,
+                brand.price,
+                brand.description
+            );
+
+        };
+
+        brandList.appendChild(card);
+
+    });
+
+    modal.classList.add("show");
+
+}
+
+
+/* =========================
+   SHOW SELECTED BRAND
+========================= */
+
+function showBrandProduct(
+    productName,
+    brandName,
+    price,
+    description
+){
+    const brandProducts = document.getElementById("brandProducts");
+    brandProducts.innerHTML = `
+        <div class="brand-product-card">
+            <h3>${brandName}</h3>
+            <p>${description}</p>
+            <div class="brand-price">₹${price.toLocaleString("en-IN")}</div>
+            <div class="brand-price-note">Price per item</div>
+            <button class="add add-cart-brand" onclick="addToCart('${brandName} ${productName}', ${price})">
+                🛒 Add to Cart
+            </button>
+        </div>
+    `;
+    brandProducts.classList.add("show");
+}
+
+
+/* =========================
+   WHATSAPP BRAND ENQUIRY
+========================= */
+
+function orderBrand(
+    brand,
+    product
+){
+
+    const message =
+    "Hello VRISHIN STORE! I want to know about " +
+    brand + " " + product;
+
+    window.open(
+        "https://wa.me/919574408913?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CLOSE BRAND POPUP
+========================= */
+
+function closeBrands(){
+
+    document
+    .getElementById("brandModal")
+    .classList.remove("show");
+
+}
+
+
+/* =========================
+   CLOSE POPUP WHEN CLICKING
+   OUTSIDE
+========================= */
+
+document
+.getElementById("brandModal")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            this
+        ){
+
+            closeBrands();
+
+        }
+
+    }
+);
+
+
 /* =========================
    CART
 ========================= */
 
 let cart = [];
 
-function addToCart(name,price){
-
-    const existing =
-    cart.find(
-        item => item.name === name
-    );
-
+function addToCart(name, price){
+    const existing = cart.find(item => item.name === name);
     if(existing){
-
         existing.quantity++;
-
     }else{
-
-        cart.push({
-
-            name:name,
-            price:price,
-            quantity:1
-
-        });
-
+        cart.push({name:name, price:Number(price), quantity:1});
     }
-
     updateCart();
+    showCartAddedFeedback();
+}
 
+function changeQuantity(index, change){
+    if(!cart[index]) return;
+    cart[index].quantity += change;
+    if(cart[index].quantity <= 0){
+        cart.splice(index, 1);
+    }
+    updateCart();
+}
+
+function removeFromCart(index){
+    if(!cart[index]) return;
+    cart.splice(index, 1);
+    updateCart();
 }
 
 function updateCart(){
-
-    const count =
-    cart.reduce(
-        (total,item) =>
-        total + item.quantity,
-        0
-    );
-
-    document.getElementById(
-        "cartCount"
-    ).textContent = count;
-
-    const cartItems =
-    document.getElementById(
-        "cartItems"
-    );
+    const count = cart.reduce((total,item) => total + item.quantity, 0);
+    document.getElementById("cartCount").textContent = count;
+    const cartItems = document.getElementById("cartItems");
+    const total = cart.reduce((sum,item) => sum + item.price * item.quantity, 0);
 
     if(cart.length === 0){
-
-        cartItems.innerHTML =
-        "Your cart is empty.";
-
-        document.getElementById(
-            "cartTotal"
-        ).textContent = "0";
-
+        cartItems.innerHTML = `<div style="padding:30px 0;text-align:center;color:#8faeb9;">🛒<br><br>Your cart is empty.<br><small>Add products to see them here.</small></div>`;
+        document.getElementById("cartTotal").textContent = "0";
         return;
-
     }
 
     let html = "";
-    let total = 0;
-
-    cart.forEach(item => {
-
-        const subtotal =
-        item.price *
-        item.quantity;
-
-        total += subtotal;
-
+    cart.forEach((item,index) => {
+        const subtotal = item.price * item.quantity;
         html += `
-
         <div class="cart-item">
-
-            <div>
-
-                <strong>
-                    ${item.name}
-                </strong>
-
-                <br>
-
-                ₹${item.price}
-                ×
-                ${item.quantity}
-
+            <div class="cart-item-info">
+                <strong>${item.name}</strong>
+                <div class="cart-item-price">₹${item.price.toLocaleString("en-IN")} each</div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" onclick="changeQuantity(${index}, -1)">−</button>
+                    <span class="quantity-number">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="changeQuantity(${index}, 1)">+</button>
+                </div>
+                <button class="remove-item" onclick="removeFromCart(${index})">Remove</button>
             </div>
-
-            <div>
-
-                ₹${subtotal}
-
-            </div>
-
-        </div>
-
-        `;
-
+            <div class="cart-item-subtotal">₹${subtotal.toLocaleString("en-IN")}</div>
+        </div>`;
     });
-
     cartItems.innerHTML = html;
+    document.getElementById("cartTotal").textContent = total.toLocaleString("en-IN");
+}
 
-    document.getElementById(
-        "cartTotal"
-    ).textContent = total;
-
+function showCartAddedFeedback(){
+    const button = document.querySelector(".cart-btn");
+    if(!button) return;
+    button.animate([{transform:"scale(1)"},{transform:"scale(1.12)"},{transform:"scale(1)"}],{duration:350});
 }
 
 function openCart(){
@@ -2429,6 +2754,7 @@ function openCart(){
 
 }
 
+
 function closeCart(){
 
     document.getElementById(
@@ -2437,59 +2763,224 @@ function closeCart(){
 
 }
 
+
 /* =========================
    WHATSAPP CHECKOUT
 ========================= */
 
 function checkoutWhatsApp(){
-
     if(cart.length === 0){
-
-        alert(
-            "Your cart is empty!"
-        );
-
+        alert("Your cart is empty!");
         return;
-
     }
-
-    let message =
-    "Hello VRISHIN STORE! I want to order:%0A%0A";
-
+    let lines = ["Hello VRISHIN STORE! I want to order:", ""];
     let total = 0;
-
     cart.forEach(item => {
-
-        const subtotal =
-        item.price *
-        item.quantity;
-
-        message +=
-        "• " +
-        item.name +
-        " × " +
-        item.quantity +
-        " = ₹" +
-        subtotal +
-        "%0A";
-
+        const subtotal = item.price * item.quantity;
+        lines.push("• " + item.name + " × " + item.quantity + " = ₹" + subtotal);
         total += subtotal;
-
     });
-
-    message +=
-    "%0ATotal: ₹" +
-    total;
-
-    window.open(
-        "https://wa.me/919574408913?text=" +
-        message,
-        "_blank"
-    );
-
+    lines.push("", "Total: ₹" + total);
+    const message = encodeURIComponent(lines.join("\n"));
+    window.open("https://wa.me/919574408913?text=" + message, "_blank");
 }
 
 </script>
 
+
+<script id="vrishin-voice-script">
+let voiceRecognition = null;
+let voiceListening = false;
+let voiceCancelled = false;
+let voiceCommandHandled = false;
+let voiceRestartTimer = null;
+
+function openVoiceAssistant(){document.getElementById("voiceAssistantPanel")?.classList.add("show");}
+
+function openVoiceVisualizer(){
+  const overlay=document.getElementById("voiceVisualizerOverlay"); if(!overlay)return;
+  overlay.classList.add("show"); overlay.setAttribute("aria-hidden","false");
+  document.getElementById("voiceVisualizerLabel").textContent="Listening...";
+  document.getElementById("voiceVisualizerSub").textContent="I'm listening. Say the product you want, or press Stop Listening.";
+}
+
+function closeVoiceVisualizer(){
+  voiceCancelled=true;
+  if(voiceRestartTimer){clearTimeout(voiceRestartTimer);voiceRestartTimer=null;}
+  const overlay=document.getElementById("voiceVisualizerOverlay");
+  if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
+  if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
+  voiceListening=false;
+  document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+}
+
+function updateVoiceVisualizer(text,sub){
+  const a=document.getElementById("voiceVisualizerLabel"),b=document.getElementById("voiceVisualizerSub");
+  if(a)a.textContent=text;if(b)b.textContent=sub||"I'm listening...";
+}
+function setAssistantStatus(message){const e=document.getElementById("voiceAssistantStatus");if(e)e.textContent=message;}
+function normalizeVoiceText(text){return String(text||"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();}
+
+function findRequestedProduct(text){
+  const n=normalizeVoiceText(text);
+  const aliases={
+    "Perfume":["perfume","perfumes","perfum","parfum","fragrance","fragrances","perform","perfume for men","perfume for women"],
+    "Lipstick":["lipstick","lipsticks","lip stick","lip color","lip colour"],
+    "Moisturizer":["moisturizer","moisturiser","moisturizers","moisturisers","moisture cream"],
+    "Face Mask":["face mask","face masks","facemask","mask"],
+    "Body Lotion":["body lotion","body lotions","bodylotion","lotion"],
+    "Sunscreen Lotion":["sunscreen","sunscreen lotion","sun screen","sunblock","sun block"],
+    "Face Wash":["face wash","facewash","face washes","facial wash"],
+    "Cream":["cream","creams","face cream","skin cream"]
+  };
+  for(const product in aliases){
+    if(aliases[product].some(a=>n.includes(a))) return product;
+  }
+  return null;
+}
+
+function handleAssistantRequest(text){
+  const product=findRequestedProduct(text);
+  if(!product){
+    updateVoiceVisualizer("I'm listening...",'I heard “'+text+'”. Please say a product such as “perfume”.');
+    setAssistantStatus("Still listening — say the product you want.");
+    return false;
+  }
+  voiceCommandHandled=true;
+  voiceCancelled=true;
+  if(voiceRestartTimer){clearTimeout(voiceRestartTimer);voiceRestartTimer=null;}
+  setAssistantStatus("Opening "+product+"…");
+  updateVoiceVisualizer("Opening "+product+"...","Command received ✓");
+  if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
+  voiceListening=false;
+  document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+  setTimeout(()=>{
+    const overlay=document.getElementById("voiceVisualizerOverlay");
+    if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
+    voiceCancelled=false;
+    try{
+      document.getElementById("shop")?.scrollIntoView({behavior:"smooth",block:"start"});
+      openBrands(product);
+      setAssistantStatus("Showing "+product+". Choose a company to view the price and add it to your cart.");
+    }catch(err){
+      setAssistantStatus("I found "+product+", but could not open the product section.");
+      console.error("VRISHIN voice navigation error:",err);
+    }
+  },650);
+  return true;
+}
+
+function handleAssistantText(){
+  const input=document.getElementById("voiceAssistantInput"),value=input?.value.trim();
+  if(!value){setAssistantStatus("Please type a product name.");return;}
+  handleAssistantRequest(value);if(input)input.value="";
+}
+
+function setupVoiceRecognition(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){setAssistantStatus("Voice recognition is not supported in this browser. You can type your request instead.");return null;}
+  const r=new SR();
+  r.lang="en-IN";
+  r.continuous=true;
+  r.interimResults=true;
+  r.maxAlternatives=8;
+
+  r.onstart=()=>{
+    voiceListening=true;
+    voiceCancelled=false;
+    voiceCommandHandled=false;
+    openVoiceVisualizer();
+    document.getElementById("voiceAssistantMic")?.classList.add("listening");
+    setAssistantStatus("Listening… say a product name.");
+  };
+
+  r.onresult=(event)=>{
+    let combined="";
+    for(let i=0;i<event.results.length;i++){
+      const result=event.results[i];
+      const transcript=result?.[0]?.transcript||"";
+      combined+=(transcript+" ");
+    }
+    combined=combined.trim();
+    if(!combined||voiceCommandHandled||voiceCancelled)return;
+
+    const input=document.getElementById("voiceAssistantInput");
+    if(input)input.value=combined;
+
+    const product=findRequestedProduct(combined);
+    if(product){
+      updateVoiceVisualizer("I heard: "+product,"Opening it now…");
+      handleAssistantRequest(combined);
+    }else{
+      updateVoiceVisualizer("Listening...",'Heard: “'+combined+'” — waiting for your product command.');
+    }
+  };
+
+  r.onerror=(event)=>{
+    if(voiceCancelled||voiceCommandHandled)return;
+    if(event.error==="not-allowed"||event.error==="service-not-allowed"){
+      updateVoiceVisualizer("Microphone permission needed","Allow microphone access, then click the microphone again.");
+      setAssistantStatus("Microphone permission was blocked.");
+      voiceListening=false;
+      document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+      return;
+    }
+    updateVoiceVisualizer("Still listening...","I didn't catch that. Speak again — I will keep waiting.");
+  };
+
+  r.onend=()=>{
+    voiceListening=false;
+    document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+    if(!voiceCancelled&&!voiceCommandHandled){
+      voiceRestartTimer=setTimeout(()=>{
+        voiceRestartTimer=null;
+        if(!voiceCancelled&&!voiceCommandHandled){
+          try{r.start();}catch(e){
+            setTimeout(()=>{if(!voiceCancelled&&!voiceCommandHandled)try{r.start();}catch(ignore){}},500);
+          }
+        }
+      },300);
+    }
+  };
+  return r;
+}
+
+function toggleVoiceAssistant(){
+  if(!voiceRecognition)voiceRecognition=setupVoiceRecognition();
+  if(!voiceRecognition)return;
+  if(voiceListening){closeVoiceVisualizer();return;}
+  voiceCancelled=false;
+  voiceCommandHandled=false;
+  openVoiceVisualizer();
+  setAssistantStatus("Listening… say a product name.");
+  try{voiceRecognition.start();}
+  catch(e){
+    voiceListening=true;
+    document.getElementById("voiceAssistantMic")?.classList.add("listening");
+  }
+}
+
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&document.activeElement?.id==="voiceAssistantInput")handleAssistantText();});
+</script>
+
+<!-- VRISHIN 3D VOICE ASSISTANT -->
+<div class="voice-visualizer-overlay" id="voiceVisualizerOverlay" aria-hidden="true">
+  <div class="voice-space">
+    <div class="voice-orbit"></div><div class="voice-orbit two"></div>
+    <div class="voice-core"><div class="voice-mic-symbol">🎙</div></div>
+    <div class="voice-frequency" aria-hidden="true"><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span></div>
+    <div class="voice-listening-label" id="voiceVisualizerLabel">Listening...</div>
+    <div class="voice-listening-sub" id="voiceVisualizerSub">Say a product name.</div>
+    <button class="voice-close" type="button" onclick="closeVoiceVisualizer()">✕ Stop Listening</button>
+  </div>
+</div>
+<div class="voice-assistant">
+  <div class="voice-assistant-panel" id="voiceAssistantPanel">
+    <div class="voice-assistant-title">🤖 VRISHIN Shopping Assistant</div>
+    <div class="voice-assistant-status" id="voiceAssistantStatus">Say or type a product.</div>
+    <div class="voice-assistant-input"><input id="voiceAssistantInput" type="text" placeholder="Try: show me lipstick"><button type="button" onclick="handleAssistantText()">Go</button></div>
+  </div>
+  <button class="voice-assistant-mic" id="voiceAssistantMic" type="button" onclick="toggleVoiceAssistant()" title="Voice Shopping Assistant" aria-label="Open voice shopping assistant">🎙️</button>
+</div>
 </body>
 </html>
