@@ -837,6 +837,12 @@ section:not(#planetIntro){
     margin:12px 0;
 
     font-size:22px;
+
+    background:linear-gradient(135deg,#FFD166 0%,#FF9F43 50%,#FF4D6D 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
 }
 
 .stars-rating{
@@ -1061,9 +1067,21 @@ section:not(#planetIntro){
 }
 
 .brand-product-card h3{
-    color:#8ceaff;
-
     margin-bottom:10px;
+
+    background:linear-gradient(135deg,#FFD166 0%,#FF9F43 50%,#FF4D6D 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+}
+
+.company-option-card h4{
+    background:linear-gradient(135deg,#FFD166 0%,#FF9F43 50%,#FF4D6D 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
 }
 
 .brand-product-card p{
@@ -1431,6 +1449,35 @@ footer{
         padding:25px 18px;
     }
 }
+
+.company-options-panel{margin-top:20px;text-align:left}.company-options-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.company-options-head button{border:1px solid rgba(100,220,255,.35);background:rgba(0,100,160,.2);color:#fff;padding:8px 12px;border-radius:18px;cursor:pointer}.company-options-note{color:#8faeb9;font-size:13px;margin-bottom:16px}.company-option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.company-option-card{position:relative;padding:18px;border-radius:18px;background:rgba(8,38,58,.75);border:1px solid rgba(100,220,255,.18);min-height:170px}.company-option-card h4{margin:5px 0 8px;color:#fff}.company-option-card small{color:#8faeb9}.lip-shade{display:block;width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.8);box-shadow:0 0 12px rgba(255,255,255,.15);margin-bottom:8px}
+
+
+/* === VRISHIN PRODUCT GRADIENT NAMES === */
+.product h3,
+.brand-card h3,
+.brand-product-card h3,
+.company-option-card h4,
+.product-planet span {
+    background: linear-gradient(135deg, #FFD166 0%, #FF9F43 48%, #FF4D6D 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.product h3,
+.brand-card h3,
+.brand-product-card h3,
+.company-option-card h4 {
+    font-weight: 800;
+}
+
+.product-planet span {
+    font-weight: 800;
+    text-shadow: 0 0 14px rgba(99,243,255,.18);
+}
+
 </style>
 
 
@@ -2484,195 +2531,149 @@ function toggleWish(button){
 ========================= */
 
 const productBrands = {
-    "Perfume": [
-        {name:"Patel", price:499, description:"Patel perfumes available at VRISHIN STORE."},
-        {name:"Denver", price:699, description:"Denver perfumes available at VRISHIN STORE."}
-    ],
-    "Lipstick": [
-        {name:"Lakme", price:399, description:"Lakme lipsticks available at VRISHIN STORE."},
-        {name:"Blue Heaven", price:249, description:"Blue Heaven lipsticks available at VRISHIN STORE."}
-    ],
-    "Moisturizer": [
-        {name:"Lakme", price:349, description:"Lakme moisturizers available at VRISHIN STORE."},
-        {name:"Garnier", price:299, description:"Garnier moisturizers available at VRISHIN STORE."},
-        {name:"Ponds", price:279, description:"Ponds moisturizers available at VRISHIN STORE."}
-    ],
-    "Face Mask": [
-        {name:"Lakme", price:199, description:"Lakme face masks available at VRISHIN STORE."},
-        {name:"Ponds", price:179, description:"Ponds face masks available at VRISHIN STORE."}
-    ],
-    "Body Lotion": [
-        {name:"Lakme", price:349, description:"Lakme body lotions available at VRISHIN STORE."},
-        {name:"Ponds", price:299, description:"Ponds body lotions available at VRISHIN STORE."}
-    ],
-    "Sunscreen Lotion": [
-        {name:"Lakme", price:499, description:"Lakme sunscreen lotions available at VRISHIN STORE."},
-        {name:"Ponds", price:399, description:"Ponds sunscreen lotions available at VRISHIN STORE."}
-    ],
-    "Face Wash": [
-        {name:"Garnier", price:249, description:"Garnier face washes available at VRISHIN STORE."},
-        {name:"Denver", price:299, description:"Denver face washes available at VRISHIN STORE."}
-    ],
-    "Cream": [
-        {name:"Garnier", price:329, description:"Garnier creams available at VRISHIN STORE."},
-        {name:"Lakme", price:379, description:"Lakme creams available at VRISHIN STORE."},
-        {name:"Ponds", price:299, description:"Ponds creams available at VRISHIN STORE."}
-    ]
+  "Perfume":[
+    {name:"Patel", description:"Choose a Patel fragrance."},
+    {name:"Denver", description:"Choose a Denver fragrance."}
+  ],
+  "Lipstick":[
+    {name:"Lakme", description:"Choose a Lakme lipstick colour."},
+    {name:"Blue Heaven", description:"Choose a Blue Heaven lipstick colour."}
+  ],
+  "Moisturizer":[
+    {name:"Lakme", description:"Choose a Lakme skincare type."},
+    {name:"Garnier", description:"Choose a Garnier skincare type."},
+    {name:"Ponds", description:"Choose a Ponds skincare type."}
+  ],
+  "Face Mask":[
+    {name:"Lakme", description:"Choose a Lakme face-mask type."},
+    {name:"Ponds", description:"Choose a Ponds face-mask type."}
+  ],
+  "Body Lotion":[
+    {name:"Lakme", description:"Choose a Lakme body-care type."},
+    {name:"Ponds", description:"Choose a Ponds body-care type."}
+  ],
+  "Sunscreen Lotion":[
+    {name:"Lakme", description:"Choose a Lakme sunscreen type."},
+    {name:"Ponds", description:"Choose a Ponds sunscreen type."}
+  ],
+  "Face Wash":[
+    {name:"Garnier", description:"Choose a Garnier face-wash type."},
+    {name:"Denver", description:"Choose a Denver grooming type."},
+    {name:"Lakme", description:"Choose a Lakme face-wash type."}
+  ],
+  "Cream":[
+    {name:"Garnier", description:"Choose a Garnier cream type."},
+    {name:"Lakme", description:"Choose a Lakme cream type."},
+    {name:"Ponds", description:"Choose a Ponds cream type."}
+  ]
 };
 
+/* Company-specific choices. Never mix one company's choices into another. */
+const companyOptions = {
+  "Perfume": {
+    "Patel":[
+      {name:"Neck Black",price:550,meta:"50 ml"},{name:"Neck Arabian Nights",price:450,meta:"50 ml"},
+      {name:"Nesty",price:550,meta:"50 ml • Pink fragrance / Unisex"},{name:"Voyage",price:600,meta:"100 ml"},
+      {name:"Neck N2 / N3 / N5 Apparel Spray",price:600,meta:"50 ml"},{name:"Neck N9 Apparel Spray",price:900,meta:"50 ml"},
+      {name:"Neck Rose Roll-On Attar",price:100,meta:"6 ml"},{name:"Neck Nafiza Roll-On Attar",price:130,meta:"6 ml"},{name:"Neck Crystal Roll-On Attar",price:170,meta:"6 ml"}
+    ],
+    "Denver":[
+      {name:"Hamilton",price:749,meta:"100 ml • Hamilton series"},{name:"Honour",price:225,meta:"20 ml"},
+      {name:"Imperial",price:225,meta:"20 ml"},{name:"Caliber",price:600,meta:"100 ml"},
+      {name:"Victor",price:379,meta:"60 ml"},{name:"Rider",price:379,meta:"60 ml"},{name:"Goal",price:379,meta:"60 ml"},
+      {name:"Original Eau de Parfum",price:500,meta:"100 ml"},{name:"Midnight",price:340,meta:"100 ml"},
+      {name:"SRK Ultra Noir Autograph",price:449,meta:"60 ml"},{name:"Blue Arctic",price:99,meta:"30 ml"},
+      {name:"Black Code Pocket Perfume",price:75,meta:"18 ml"}
+    ]
+  },
+  "Lipstick": {
+    "Lakme":[
+      {name:"Red",price:399,meta:"Classic red"},{name:"Pink",price:399,meta:"Pink"},{name:"Nude",price:399,meta:"Nude"},
+      {name:"Brown",price:399,meta:"Brown"},{name:"Wine",price:399,meta:"Wine"},{name:"Plum",price:399,meta:"Plum"},
+      {name:"Mauve",price:399,meta:"Mauve"},{name:"Orange",price:399,meta:"Orange"},{name:"Burgundy",price:399,meta:"Burgundy"}
+    ],
+    "Blue Heaven":[
+      {name:"Red",price:249,meta:"Classic red"},{name:"Pink",price:249,meta:"Pink"},{name:"Nude",price:249,meta:"Nude"},
+      {name:"Brown",price:249,meta:"Brown"},{name:"Wine",price:249,meta:"Wine"},{name:"Berry",price:249,meta:"Berry"},
+      {name:"Mauve",price:249,meta:"Mauve"},{name:"Coral",price:249,meta:"Coral"}
+    ]
+  },
+  "Moisturizer": {
+    "Lakme":[
+      {name:"Vitamin C",price:349,meta:"Vitamin C brightening care"},{name:"Hyaluronic Water-Light",price:399,meta:"Hydrating"},
+      {name:"9 to 5 Hydrating",price:399,meta:"Hydrating care"},{name:"Niacinamide",price:399,meta:"Niacinamide care"}
+    ],
+    "Garnier":[
+      {name:"Vitamin C",price:299,meta:"Vitamin C"},{name:"Hyaluronic Aloe",price:349,meta:"Hydration"},
+      {name:"Bright Complete",price:299,meta:"Brightening care"},{name:"Moisturiser SPF",price:399,meta:"Moisturiser + SPF"}
+    ],
+    "Ponds":[
+      {name:"Light Gel",price:279,meta:"Light hydration"},{name:"Super Light Gel",price:299,meta:"Gel hydration"},
+      {name:"Bright Beauty",price:299,meta:"Brightening care"},{name:"Cold Cream",price:249,meta:"Rich moisture"}
+    ]
+  },
+  "Face Mask": {
+    "Lakme":[{name:"Clay / Detox",price:199,meta:"Cleansing mask"},{name:"Hydrating",price:249,meta:"Hydration"},{name:"Vitamin C",price:249,meta:"Brightening care"}],
+    "Ponds":[{name:"Bright Beauty",price:179,meta:"Brightening care"},{name:"Hydrating",price:199,meta:"Hydration"},{name:"Detox / Clay",price:199,meta:"Cleansing"}]
+  },
+  "Body Lotion": {
+    "Lakme":[{name:"Peach Milk",price:349,meta:"Moisturising lotion"},{name:"9 to 5 Hydrating",price:399,meta:"Hydrating"},{name:"SPF Body Lotion",price:449,meta:"Sun protection + moisture"}],
+    "Ponds":[{name:"Light Moisturiser",price:299,meta:"Daily moisture"},{name:"Bright Beauty",price:299,meta:"Brightening care"},{name:"Deep Moisture",price:329,meta:"Rich moisture"}]
+  },
+  "Sunscreen Lotion": {
+    "Lakme":[{name:"SPF 50 Water Light + Niacinamide",price:550,meta:"SPF 50 PA++++"},{name:"5% Hyaluronic Water-Light SPF 50",price:499,meta:"SPF 50"},{name:"5% Niacinamide + Vitamin C SPF 50",price:499,meta:"SPF 50"},{name:"9 to 5 Hydrating SPF 50",price:525,meta:"SPF 50"},{name:"Tinted Niacinamide SPF 50",price:599,meta:"Tinted sunscreen"}],
+    "Ponds":[{name:"SPF 30",price:399,meta:"Daily sun protection"},{name:"SPF 50",price:449,meta:"High SPF"},{name:"Bright Beauty SPF",price:449,meta:"Brightening + SPF"}]
+  },
+  "Face Wash": {
+    "Garnier":[{name:"Vitamin C",price:249,meta:"Brightening"},{name:"Bright Complete",price:249,meta:"Brightening"},{name:"Pure Active",price:299,meta:"Cleansing"},{name:"Hyaluronic Aloe",price:299,meta:"Hydration"}],
+    "Denver":[{name:"Oil Clear",price:299,meta:"Oil-control cleansing"},{name:"Detox",price:299,meta:"Deep cleansing"},{name:"Recharge",price:299,meta:"Fresh cleansing"}],
+    "Lakme":[{name:"Blush & Glow Lemon + Vitamin C",price:130,meta:"Lemon facewash"},{name:"Blush & Glow Strawberry + Vitamin C",price:289,meta:"Strawberry facewash"},{name:"Perfect Radiance + Niacinamide",price:175,meta:"Brightening"},{name:"Glycolic Illuminate",price:329,meta:"Glycolic acid"},{name:"Dew Drama + Pro-Ceramides",price:249,meta:"6% Vitamin C"}]
+  },
+  "Cream": {
+    "Garnier":[{name:"Vitamin C Serum Cream SPF 40",price:219,meta:"45 g • SPF 40"},{name:"Bright Complete",price:329,meta:"Brightening"},{name:"Hyaluronic Aloe",price:329,meta:"Hydration"}],
+    "Lakme":[{name:"Vitamin C Brilliance Day Cream",price:375,meta:"50 g"},{name:"9 to 5 Complexion Care",price:99,meta:"Daily care"},{name:"Absolute Perfect Radiance",price:299,meta:"Brightening"}],
+    "Ponds":[{name:"Bright Beauty",price:299,meta:"Brightening"},{name:"Light Gel",price:299,meta:"Light hydration"},{name:"Age Miracle",price:599,meta:"Anti-ageing care"}]
+  }
+};
 
-/* =========================
-   OPEN BRAND POPUP
-========================= */
+const shadeColors={red:"#c62828",pink:"#e91e63",nude:"#c49a6c",brown:"#6d4c41",wine:"#722f37",plum:"#7b1fa2",mauve:"#9c6b7a",orange:"#ef6c00",burgundy:"#651b1b",berry:"#8e2457",coral:"#ff7043"};
 
 function openBrands(productName){
-
-    const modal =
-    document.getElementById("brandModal");
-
-    const title =
-    document.getElementById("brandTitle");
-
-    const brandList =
-    document.getElementById("brandList");
-
-    const brandProducts =
-    document.getElementById("brandProducts");
-
-    title.innerHTML =
-    productName + " Brands";
-
-    brandList.innerHTML = "";
-
-    brandProducts.classList.remove("show");
-
-    const brands =
-    productBrands[productName] || [];
-
-    brands.forEach(function(brand){
-
-        const card =
-        document.createElement("div");
-
-        card.className =
-        "brand-card";
-
-        card.innerHTML = `
-
-            <h3>
-                ${brand.name}
-            </h3>
-
-            <p>
-                View ${productName}
-            </p>
-
-        `;
-
-        card.onclick = function(){
-
-            showBrandProduct(
-                productName,
-                brand.name,
-                brand.price,
-                brand.description
-            );
-
-        };
-
-        brandList.appendChild(card);
-
-    });
-
-    modal.classList.add("show");
-
+  const modal=document.getElementById("brandModal"), title=document.getElementById("brandTitle"), brandList=document.getElementById("brandList"), brandProducts=document.getElementById("brandProducts");
+  if(!modal||!brandList)return;
+  title.innerHTML=productName+" Companies";
+  brandList.innerHTML="";
+  brandProducts.classList.remove("show");
+  (productBrands[productName]||[]).forEach(brand=>{
+    const card=document.createElement("div"); card.className="brand-card";
+    card.innerHTML=`<h3>${brand.name}</h3><p>${brand.description}</p><button class="product-option-btn">View ${productName} types</button>`;
+    card.onclick=()=>showCompanyOptions(productName,brand.name);
+    brandList.appendChild(card);
+  });
+  modal.classList.add("show");
 }
 
-
-/* =========================
-   SHOW SELECTED BRAND
-========================= */
-
-function showBrandProduct(
-    productName,
-    brandName,
-    price,
-    description
-){
-    const brandProducts = document.getElementById("brandProducts");
-    brandProducts.innerHTML = `
-        <div class="brand-product-card">
-            <h3>${brandName}</h3>
-            <p>${description}</p>
-            <div class="brand-price">₹${price.toLocaleString("en-IN")}</div>
-            <div class="brand-price-note">Price per item</div>
-            <button class="add add-cart-brand" onclick="addToCart('${brandName} ${productName}', ${price})">
-                🛒 Add to Cart
-            </button>
-        </div>
-    `;
-    brandProducts.classList.add("show");
+function showCompanyOptions(productName,brandName){
+  const items=(companyOptions[productName]||{})[brandName]||[];
+  const brandProducts=document.getElementById("brandProducts");
+  if(!brandProducts)return;
+  if(!items.length){brandProducts.innerHTML=`<div class="brand-product-card"><h3>${brandName}</h3><p>More options will be added soon.</p></div>`;brandProducts.classList.add("show");return;}
+  brandProducts.innerHTML=`
+    <div class="company-options-panel">
+      <div class="company-options-head"><h3>${brandName} — ${productName}</h3><button onclick="backToCompanies('${productName}')">← Companies</button></div>
+      <p class="company-options-note">Choose a ${productName.toLowerCase()} type from ${brandName}. Only ${brandName} options are shown here.</p>
+      <div class="company-option-grid">${items.map((item,i)=>{
+        const key=(item.name||"").toLowerCase().replace(/[^a-z]/g,"");
+        const shade=productName==="Lipstick" ? Object.keys(shadeColors).find(c=>key.includes(c)) : null;
+        return `<div class="company-option-card">${shade?`<span class="lip-shade" style="background:${shadeColors[shade]}"></span>`:""}<h4>${item.name}</h4><small>${item.meta||""}</small><div class="brand-price">₹${Number(item.price).toLocaleString("en-IN")}</div><button class="add add-cart-brand" onclick='addToCart(${JSON.stringify(brandName+" "+item.name+" "+productName)},${Number(item.price)})'>🛒 Add to Cart</button></div>`;
+      }).join("")}</div>
+    </div>`;
+  brandProducts.classList.add("show");
 }
-
-
-/* =========================
-   WHATSAPP BRAND ENQUIRY
-========================= */
-
-function orderBrand(
-    brand,
-    product
-){
-
-    const message =
-    "Hello VRISHIN STORE! I want to know about " +
-    brand + " " + product;
-
-    window.open(
-        "https://wa.me/919574408913?text=" +
-        encodeURIComponent(message),
-        "_blank"
-    );
-
-}
-
-
-/* =========================
-   CLOSE BRAND POPUP
-========================= */
-
-function closeBrands(){
-
-    document
-    .getElementById("brandModal")
-    .classList.remove("show");
-
-}
-
-
-/* =========================
-   CLOSE POPUP WHEN CLICKING
-   OUTSIDE
-========================= */
-
-document
-.getElementById("brandModal")
-.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            this
-        ){
-
-            closeBrands();
-
-        }
-
-    }
-);
-
+function backToCompanies(productName){openBrands(productName);}
+function orderBrand(brand,product){window.open("https://wa.me/919574408913?text="+encodeURIComponent("Hello VRISHIN STORE! I want to know about "+brand+" "+product),"_blank");}
+function closeBrands(){document.getElementById("brandModal")?.classList.remove("show");}
+document.getElementById("brandModal")?.addEventListener("click",function(e){if(e.target===this)closeBrands();});
 
 /* =========================
    CART
@@ -2789,177 +2790,214 @@ function checkoutWhatsApp(){
 
 
 <script id="vrishin-voice-script">
-let voiceRecognition = null;
-let voiceListening = false;
-let voiceCancelled = false;
-let voiceCommandHandled = false;
-let voiceRestartTimer = null;
-
+let voiceRecognition=null, voiceListening=false, voiceCancelled=false, voiceCommandHandled=false, voiceReplyLanguage="en-IN", voiceLangIndex=0, voiceRestartTimer=null;
+const voiceLanguages=["en-IN","hi-IN","gu-IN"];
 function openVoiceAssistant(){document.getElementById("voiceAssistantPanel")?.classList.add("show");}
-
-function openVoiceVisualizer(){
-  const overlay=document.getElementById("voiceVisualizerOverlay"); if(!overlay)return;
-  overlay.classList.add("show"); overlay.setAttribute("aria-hidden","false");
-  document.getElementById("voiceVisualizerLabel").textContent="Listening...";
-  document.getElementById("voiceVisualizerSub").textContent="I'm listening. Say the product you want, or press Stop Listening.";
+function detectReplyLanguage(text){
+  const t=String(text||"");
+  if(/[\u0A80-\u0AFF]/.test(t))return "gu-IN";
+  if(/[\u0900-\u097F]/.test(t))return "hi-IN";
+  if(/\b(kya|hai|mujhe|dikhao|chahiye|perfume|lipstick|rang|cream|kaunsa|kaunsi|batao)\b/i.test(t))return "hi-IN";
+  if(/\b(મને|જોઈએ|બતાવો|પરફ્યુમ|લિપસ્ટિક|રંગ|કઈ|કયો|કિંમત)\b/i.test(t))return "gu-IN";
+  return "en-IN";
 }
-
-function closeVoiceVisualizer(){
-  voiceCancelled=true;
-  if(voiceRestartTimer){clearTimeout(voiceRestartTimer);voiceRestartTimer=null;}
-  const overlay=document.getElementById("voiceVisualizerOverlay");
-  if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
-  if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
-  voiceListening=false;
-  document.getElementById("voiceAssistantMic")?.classList.remove("listening");
-}
-
-function updateVoiceVisualizer(text,sub){
-  const a=document.getElementById("voiceVisualizerLabel"),b=document.getElementById("voiceVisualizerSub");
-  if(a)a.textContent=text;if(b)b.textContent=sub||"I'm listening...";
-}
-function setAssistantStatus(message){const e=document.getElementById("voiceAssistantStatus");if(e)e.textContent=message;}
-function normalizeVoiceText(text){return String(text||"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();}
-
-function findRequestedProduct(text){
-  const n=normalizeVoiceText(text);
-  const aliases={
-    "Perfume":["perfume","perfumes","perfum","parfum","fragrance","fragrances","perform","perfume for men","perfume for women"],
-    "Lipstick":["lipstick","lipsticks","lip stick","lip color","lip colour"],
-    "Moisturizer":["moisturizer","moisturiser","moisturizers","moisturisers","moisture cream"],
-    "Face Mask":["face mask","face masks","facemask","mask"],
-    "Body Lotion":["body lotion","body lotions","bodylotion","lotion"],
-    "Sunscreen Lotion":["sunscreen","sunscreen lotion","sun screen","sunblock","sun block"],
-    "Face Wash":["face wash","facewash","face washes","facial wash"],
-    "Cream":["cream","creams","face cream","skin cream"]
+function speak(text,lang=voiceReplyLanguage){
+  if(!('speechSynthesis' in window))return;
+  const msg=String(text||'').trim();
+  if(!msg)return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(msg);
+  u.lang=lang; u.rate=.94; u.pitch=1;
+  const setVoice=()=>{
+    const vs=speechSynthesis.getVoices();
+    const exact=vs.find(v=>v.lang.toLowerCase()===lang.toLowerCase());
+    const base=vs.find(v=>v.lang.toLowerCase().startsWith(lang.split('-')[0]));
+    if(exact)u.voice=exact; else if(base)u.voice=base;
+    try{speechSynthesis.speak(u);}catch(e){}
   };
-  for(const product in aliases){
-    if(aliases[product].some(a=>n.includes(a))) return product;
-  }
+  if(speechSynthesis.getVoices().length)setVoice();
+  else { speechSynthesis.onvoiceschanged=()=>{speechSynthesis.onvoiceschanged=null;setVoice();}; setTimeout(setVoice,120); }
+}
+function setAssistantStatus(t){const e=document.getElementById('voiceAssistantStatus');if(e)e.textContent=t;}
+function updateVoiceVisualizer(t,s){const a=document.getElementById('voiceVisualizerLabel'),b=document.getElementById('voiceVisualizerSub');if(a)a.textContent=t;if(b)b.textContent=s||"I'm listening...";}
+function openVoiceVisualizer(){const o=document.getElementById('voiceVisualizerOverlay');if(!o)return;o.classList.add('show');o.setAttribute('aria-hidden','false');updateVoiceVisualizer('Listening...','English • Hindi • Gujarati');}
+function closeVoiceVisualizer(){voiceCancelled=true;if(voiceRestartTimer)clearTimeout(voiceRestartTimer);if(voiceRecognition)try{voiceRecognition.stop()}catch(e){}voiceListening=false;document.getElementById('voiceAssistantMic')?.classList.remove('listening');document.getElementById('voiceVisualizerOverlay')?.classList.remove('show');}
+function norm(t){return String(t||'').toLowerCase().replace(/[^a-z0-9\u0900-\u097F\u0A80-\u0AFF ]/g,' ').replace(/\s+/g,' ').trim();}
+function findProduct(t){const n=norm(t);const a={'Perfume':['perfume','perfumes','fragrance','fragrances','परफ्यूम','इत्र','પરફ્યુમ','સુગંધ'],'Lipstick':['lipstick','lipsticks','lip color','लिपस्टिक','લિપસ્ટિક'],'Moisturizer':['moisturizer','moisturiser','मॉइस्चराइज़र','મોઇશ્ચરાઇઝર'],'Face Mask':['face mask','facemask','फेस मास्क','ફેસ मास્ક'],'Body Lotion':['body lotion','बॉडी लोशन','બોડી લોશન'],'Sunscreen Lotion':['sunscreen','sun screen','सनस्क्रीन','સનસ્ક્રીન'],'Face Wash':['face wash','facewash','फेस वॉश','ફેસ વોશ'],'Cream':['cream','क्रीम','ક્રીમ']};for(const p in a)if(a[p].some(x=>n.includes(norm(x))))return p;return null;}
+function findBrand(t){const n=norm(t);return ['Patel','Denver','Lakme','Blue Heaven','Garnier','Ponds'].find(b=>n.includes(norm(b)))||null;}
+function findOption(t,product,brand){const n=norm(t);const arr=(companyOptions[product]||{})[brand]||[];return arr.find(x=>n.includes(norm(x.name)))||null;}
+function findPage(t){
+  const n=norm(t);
+  const pages=[
+    {id:'home',keys:['home','homepage','main page','go home','take me home','open home','show home','घर','होम','मुख्य पेज','હોમ','મુખ્ય પેજ']},
+    {id:'shop',keys:['shop','shopping','products','product page','see products','show products','open products','take me to products','show me what you have','what products do you have','what do you sell','catalog','store','buy','purchase','items','things you sell','दुकान','प्रोडक्ट','प्रोडक्ट्स','सामान','शॉप','क्या बेचते हो','क्या प्रोडक्ट हैं','प्रोडक्ट दिखाओ','મારે પ્રોડક્ટ જોવા છે','શું પ્રોડક્ટ છે','પ્રોડક્ટ બતાવો','દુકાન','શોપ']},
+    {id:'about',keys:['about','about us','our story','who are you','tell me about','tell me about the store','what is vrishin','open about','show about','हमारे बारे में','अबाउट','અમારા વિશે','અબાઉટ']},
+    {id:'services',keys:['services','service','beauty services','what services','what do you offer','what can i get done','parlour','salon','beauty parlour','hair care','makeup service','nail care','सर्विस','सर्विसेज','पार्लर','ब्यूटी पार्लर','क्या सर्विस है','સર્વિસ','સર્વિસિસ','પાર્લર','કઈ સર્વિસ છે']},
+    {id:'contact',keys:['contact','contact page','contact us','reach us','how can i contact','how do i contact','how to contact','i want to contact','i need to contact','give me your contact','give me contact details','phone number','mobile number','call you','whatsapp','email','address','location','where are you','where is the store','how can i reach','talk to you','फोन','संपर्क','कॉन्टैक्ट','संपर्क पेज','पता','व्हाट्सऐप','ईमेल','मुझसे संपर्क','संपर्क कैसे','સરનામું','સંપર્ક','કૉન્ટેક્ટ','વોટ્સએપ','ઈમેલ','ક્યાં છો','સ્ટોર ક્યાં છે','સંપર્ક કરવો છે','મને કોન્ટેક્ટ જોઈએ']}
+  ];
+  for(const page of pages)if(page.keys.some(k=>n.includes(norm(k))))return page.id;
   return null;
 }
+function findIntent(text){
+  const n=norm(text);
+  const page=findPage(n);
+  if(page)return {type:'page',value:page};
+  if(/\b(hi|hello|hey|namaste|નમસ્તે|હેલો|नमस्ते)\b/i.test(n))return {type:'greeting'};
+  if(/\b(thank you|thanks|धन्यवाद|धन्यावाद|આભાર)\b/i.test(n))return {type:'thanks'};
+  if(/\b(help|help me|what can you do|मदद|मदद करो|મદદ|મને મદદ કરો)\b/i.test(n))return {type:'help'};
+  if(/\b(cart|my cart|show cart|open cart|कार्ट|मेरा कार्ट|कार्ट खोलो|કાર્ટ|મારો કાર્ટ|કાર્ટ ખોલો)\b/i.test(n))return {type:'cart'};
+  const product=findProduct(n);
+  if(product)return {type:'product',value:product};
+  return {type:'unknown'};
+}
 
-function handleAssistantRequest(text){
-  const product=findRequestedProduct(text);
-  if(!product){
-    updateVoiceVisualizer("I'm listening...",'I heard “'+text+'”. Please say a product such as “perfume”.');
-    setAssistantStatus("Still listening — say the product you want.");
-    return false;
-  }
-  voiceCommandHandled=true;
-  voiceCancelled=true;
-  if(voiceRestartTimer){clearTimeout(voiceRestartTimer);voiceRestartTimer=null;}
-  setAssistantStatus("Opening "+product+"…");
-  updateVoiceVisualizer("Opening "+product+"...","Command received ✓");
-  if(voiceRecognition){try{voiceRecognition.stop();}catch(e){}}
-  voiceListening=false;
-  document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+function pageName(page,lang){
+  if(lang==='gu-IN')return ({home:'હોમ પેજ',shop:'પ્રોડક્ટ્સ પેજ',about:'અબાઉટ પેજ',services:'સર્વિસિસ પેજ',contact:'કૉન્ટેક્ટ પેજ'})[page];
+  if(lang==='hi-IN')return ({home:'होम पेज',shop:'प्रोडक्ट्स पेज',about:'अबाउट पेज',services:'सर्विसेज पेज',contact:'कॉन्टैक्ट पेज'})[page];
+  return ({home:'home page',shop:'products page',about:'about page',services:'services page',contact:'contact page'})[page];
+}
+function pageReply(page,lang){
+  if(lang==='gu-IN')return page==='contact'?'હા, જરૂર! હું તમને કૉન્ટેક્ટ પેજ પર લઈ જઈ રહ્યો છું. જો તમને પ્રોડક્ટ્સ જોવા હોય, કોઈ પ્રોડક્ટ વિશે જાણવું હોય અથવા ઓર્ડર કરવો હોય, તો બસ કહો — હું તમારી મદદ કરીશ.':page==='shop'?'હા, જરૂર! હું તમને પ્રોડક્ટ્સ પેજ પર લઈ જઈ રહ્યો છું. તમે કોઈપણ પ્રોડક્ટ, કંપની, કિંમત અથવા પ્રકાર વિશે મને પૂછો, હું તમારી મદદ કરીશ.':page==='services'?'હા, જરૂર! હું તમને સર્વિસિસ પેજ પર લઈ જઈ રહ્યો છું. તમને બ્યુટી સર્વિસિસ વિશે માહિતી જોઈએ તો હું તમારી મદદ કરીશ.':page==='about'?'હા, જરૂર! હું તમને અબાઉટ પેજ પર લઈ જઈ રહ્યો છું. જો તમને સ્ટોર વિશે વધુ જાણવું હોય તો હું તમને મદદ કરીશ.':`હા, જરૂર! હું તમને ${pageName(page,lang)} પર લઈ જઈ રહ્યો છું. જો તમને પ્રોડક્ટ્સ અથવા બીજી કોઈ વસ્તુ જોઈએ તો હું તમારી મદદ કરીશ.`;
+  if(lang==='hi-IN')return page==='contact'?'हाँ, बिल्कुल! मैं आपको कॉन्टैक्ट पेज पर ले जा रहा हूँ। अगर आपको प्रोडक्ट्स देखने हैं, किसी प्रोडक्ट के बारे में जानना है या ऑर्डर करना है, तो बस बताइए — मैं आपकी मदद करूँगा।':page==='shop'?'हाँ, बिल्कुल! मैं आपको प्रोडक्ट्स पेज पर ले जा रहा हूँ। आप किसी भी प्रोडक्ट, कंपनी, कीमत या प्रकार के बारे में पूछ सकते हैं, मैं आपकी मदद करूँगा।':page==='services'?'हाँ, बिल्कुल! मैं आपको सर्विसेज पेज पर ले जा रहा हूँ। अगर आपको ब्यूटी सर्विसेज के बारे में जानकारी चाहिए, तो मैं आपकी मदद करूँगा।':page==='about'?'हाँ, बिल्कुल! मैं आपको अबाउट पेज पर ले जा रहा हूँ। अगर आप स्टोर के बारे में और जानना चाहते हैं, तो मैं आपकी मदद करूँगा।':`हाँ, बिल्कुल! मैं आपको ${pageName(page,lang)} पर ले जा रहा हूँ। अगर आपको प्रोडक्ट्स या कुछ और चाहिए, तो मैं आपकी मदद करूँगा।`;
+  return page==='contact'?"Yes, of course! I'll take you to the contact page. If you want to see products, I can take you there too, and if you need help choosing or ordering something, just tell me.":page==='shop'?"Yes, of course! I'll take you to the products page. You can ask me about any product, company, price, or type, and I'll help you.":page==='services'?"Yes, of course! I'll take you to the services page. If you want to know about our beauty services, I'll help you with that.":page==='about'?"Yes, of course! I'll take you to the about page. If you want to know more about VRISHIN STORE, I'll help you with that.":`Yes, of course! I'll take you to the ${pageName(page,lang)}. If you want products or anything else, I'll help you.`;
+}
+function conversationalReply(product,lang){const p=product.toLowerCase();if(lang==='gu-IN')return `હા, જરૂર! હું તમને ${p} બતાવી રહ્યો છું. તમે કંપની અને પ્રકાર પસંદ કરી શકો છો. જો તમને કિંમત, બીજી પ્રોડક્ટ અથવા ઓર્ડર વિશે મદદ જોઈએ તો મને કહો.`;if(lang==='hi-IN')return `हाँ, बिल्कुल! मैं आपको ${p} दिखा रहा हूँ। आप कंपनी और प्रकार चुन सकते हैं। अगर आपको कीमत, कोई दूसरा प्रोडक्ट या ऑर्डर करने में मदद चाहिए, तो मुझे बताइए।`;return `Yes, of course! I'll show you ${p}. You can choose the company and type you like. If you want the price, another product, or help placing an order, just tell me.`;}
+function generalVoiceReply(lang){
+  if(lang==='gu-IN')return 'હા, હું અહીં છું. તમે તમારી જરૂરિયાત સામાન્ય રીતે કહી શકો છો — જેમ કે મને કૉન્ટેક્ટ જોઈએ, પ્રોડક્ટ્સ જોવા છે, કોઈ ચોક્કસ પ્રોડક્ટ શોધવી છે, સર્વિસિસ વિશે જાણવું છે, કિંમત પૂછવી છે, કાર્ટ ખોલવો છે અથવા ઓર્ડર કરવો છે. હું તમારી વાત સમજીને યોગ્ય જગ્યાએ લઈ જઈશ અને તમને આગળ શું કરવું તે પણ કહીશ.';
+  if(lang==='hi-IN')return 'हाँ, मैं यहाँ हूँ। आप अपनी जरूरत सामान्य तरीके से बता सकते हैं — जैसे मुझे कॉन्टैक्ट चाहिए, प्रोडक्ट्स देखने हैं, कोई खास प्रोडक्ट चाहिए, सर्विसेज के बारे में जानना है, कीमत पूछनी है, कार्ट खोलना है या ऑर्डर करना है। मैं आपकी बात समझकर सही जगह ले जाऊँगा और आगे भी मदद करूँगा।';
+  return "Yes, I'm here for you. You can simply tell me what you need — for example, contact details, products to browse, a specific product, our services, a price, your cart, or an order. I'll understand what you're asking and take you to the right place, then help you with the next step.";
+}
+function intentReply(intent,lang){
+  if(intent==='greeting')return lang==='gu-IN'?'નમસ્તે! VRISHIN STORE માં આપનું સ્વાગત છે. તમને શું જોઈએ છે? હું તમને મદદ કરીશ.':lang==='hi-IN'?'नमस्ते! VRISHIN STORE में आपका स्वागत है। आपको क्या चाहिए? मैं आपकी मदद करूँगा.':'Hello! Welcome to VRISHIN STORE. What do you need? I am here to help.';
+  if(intent==='thanks')return lang==='gu-IN'?'તમારું સ્વાગત છે! જ્યારે પણ જરૂર હોય ત્યારે મને કહો.':lang==='hi-IN'?'आपका स्वागत है! जब भी जरूरत हो, मुझे बताइए।':'You are very welcome! Just tell me whenever you need help.';
+  if(intent==='help')return lang==='gu-IN'?'હું તમને પ્રોડક્ટ્સ શોધવામાં, કંપની અને પ્રકાર પસંદ કરવામાં, પેજ ખોલવામાં, કૉન્ટેક્ટ માહિતી મેળવવામાં અને કાર્ટ અથવા ઓર્ડર વિશે મદદ કરી શકું છું.':lang==='hi-IN'?'मैं आपको प्रोडक्ट्स खोजने, कंपनी और प्रकार चुनने, पेज खोलने, कॉन्टैक्ट जानकारी पाने और कार्ट या ऑर्डर में मदद कर सकता हूँ।':'I can help you find products, choose a company and type, open pages, get contact information, and help with your cart or order.';
+  if(intent==='cart')return lang==='gu-IN'?'હા, જરૂર! હું તમારો કાર્ટ ખોલી રહ્યો છું. જો તમે કોઈ પ્રોડક્ટ શોધવા અથવા ઓર્ડર કરવા માંગતા હોવ તો હું તેમાં પણ મદદ કરીશ.':lang==='hi-IN'?'हाँ, बिल्कुल! मैं आपका कार्ट खोल रहा हूँ। अगर आप कोई प्रोडक्ट ढूँढना या ऑर्डर करना चाहते हैं, तो मैं उसमें भी मदद करूँगा।':'Yes, of course! I will open your cart. If you want to find a product or place an order, I can help with that too.';
+  return generalVoiceReply(lang);
+}
+function finishVoiceNavigation(page){
   setTimeout(()=>{
-    const overlay=document.getElementById("voiceVisualizerOverlay");
-    if(overlay){overlay.classList.remove("show");overlay.setAttribute("aria-hidden","true");}
-    voiceCancelled=false;
-    try{
-      document.getElementById("shop")?.scrollIntoView({behavior:"smooth",block:"start"});
+    document.getElementById('voiceVisualizerOverlay')?.classList.remove('show');
+    document.getElementById(page)?.scrollIntoView({behavior:'smooth',block:'start'});
+    setAssistantStatus(`You are on the ${pageName(page,voiceReplyLanguage)}.`);
+  },1400);
+}
+function handleAssistantRequest(text){
+  const raw=String(text||'').trim();
+  const intent=findIntent(raw);
+  const product=findProduct(raw), brand=findBrand(raw);
+  voiceReplyLanguage=detectReplyLanguage(raw);
+  voiceCommandHandled=true;
+
+  if(intent.type==='page'){
+    const reply=pageReply(intent.value,voiceReplyLanguage);
+    setAssistantStatus(`Opening ${pageName(intent.value,voiceReplyLanguage)}...`);
+    updateVoiceVisualizer('Yes, of course!',reply);
+    speak(reply,voiceReplyLanguage);
+    if(voiceRecognition)try{voiceRecognition.stop()}catch(e){}
+    voiceListening=false;document.getElementById('voiceAssistantMic')?.classList.remove('listening');
+    finishVoiceNavigation(intent.value);
+    return true;
+  }
+  if(intent.type==='product'){
+    const reply=conversationalReply(product,voiceReplyLanguage);
+    setAssistantStatus(`Opening ${product}...`);
+    updateVoiceVisualizer('Yes, of course!',reply);
+    speak(reply,voiceReplyLanguage);
+    if(voiceRecognition)try{voiceRecognition.stop()}catch(e){}
+    voiceListening=false;document.getElementById('voiceAssistantMic')?.classList.remove('listening');
+    setTimeout(()=>{
+      document.getElementById('voiceVisualizerOverlay')?.classList.remove('show');
+      document.getElementById('shop')?.scrollIntoView({behavior:'smooth',block:'start'});
       openBrands(product);
-      setAssistantStatus("Showing "+product+". Choose a company to view the price and add it to your cart.");
-    }catch(err){
-      setAssistantStatus("I found "+product+", but could not open the product section.");
-      console.error("VRISHIN voice navigation error:",err);
-    }
-  },650);
-  return true;
+      if(brand)showCompanyOptions(product,brand);
+      setAssistantStatus(`Showing ${product}.`);
+    },1400);
+    return true;
+  }
+  if(intent.type==='cart'){
+    const reply=intentReply('cart',voiceReplyLanguage);
+    setAssistantStatus('Opening your cart...'); updateVoiceVisualizer('Yes, of course!',reply); speak(reply,voiceReplyLanguage);
+    if(voiceRecognition)try{voiceRecognition.stop()}catch(e){} voiceListening=false; document.getElementById('voiceAssistantMic')?.classList.remove('listening');
+    setTimeout(()=>{document.getElementById('voiceVisualizerOverlay')?.classList.remove('show');openCart();},1400); return true;
+  }
+  if(intent.type==='greeting'||intent.type==='thanks'||intent.type==='help'){
+    const msg=intentReply(intent.type,voiceReplyLanguage); updateVoiceVisualizer('I can help you',msg); setAssistantStatus(msg); if(voiceRecognition)try{voiceRecognition.stop()}catch(e){} voiceListening=false; document.getElementById('voiceAssistantMic')?.classList.remove('listening'); speak(msg,voiceReplyLanguage); return true;
+  }
+  const msg=generalVoiceReply(voiceReplyLanguage);
+  updateVoiceVisualizer('I can help you',msg); setAssistantStatus(msg); if(voiceRecognition)try{voiceRecognition.stop()}catch(e){} voiceListening=false; document.getElementById('voiceAssistantMic')?.classList.remove('listening'); speak(msg,voiceReplyLanguage);
+  return false;
 }
-
-function handleAssistantText(){
-  const input=document.getElementById("voiceAssistantInput"),value=input?.value.trim();
-  if(!value){setAssistantStatus("Please type a product name.");return;}
-  handleAssistantRequest(value);if(input)input.value="";
-}
-
+function handleAssistantText(){const i=document.getElementById("voiceAssistantInput"),v=i?.value.trim();if(v)handleAssistantRequest(v);if(i)i.value="";}
 function setupVoiceRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){setAssistantStatus("Voice recognition is not supported in this browser. You can type your request instead.");return null;}
+  if(!SR){setAssistantStatus("Voice recognition is not supported in this browser. Try Chrome on localhost or HTTPS.");return null;}
   const r=new SR();
-  r.lang="en-IN";
-  r.continuous=true;
+  r.lang=voiceLanguages[voiceLangIndex];
+  r.continuous=false;
   r.interimResults=true;
-  r.maxAlternatives=8;
-
+  r.maxAlternatives=5;
   r.onstart=()=>{
     voiceListening=true;
-    voiceCancelled=false;
     voiceCommandHandled=false;
     openVoiceVisualizer();
     document.getElementById("voiceAssistantMic")?.classList.add("listening");
-    setAssistantStatus("Listening… say a product name.");
+    setAssistantStatus("Listening... Tell me what you need.");
   };
-
-  r.onresult=(event)=>{
-    let combined="";
-    for(let i=0;i<event.results.length;i++){
-      const result=event.results[i];
-      const transcript=result?.[0]?.transcript||"";
-      combined+=(transcript+" ");
-    }
-    combined=combined.trim();
-    if(!combined||voiceCommandHandled||voiceCancelled)return;
-
-    const input=document.getElementById("voiceAssistantInput");
-    if(input)input.value=combined;
-
-    const product=findRequestedProduct(combined);
-    if(product){
-      updateVoiceVisualizer("I heard: "+product,"Opening it now…");
-      handleAssistantRequest(combined);
-    }else{
-      updateVoiceVisualizer("Listening...",'Heard: “'+combined+'” — waiting for your product command.');
-    }
-  };
-
-  r.onerror=(event)=>{
-    if(voiceCancelled||voiceCommandHandled)return;
-    if(event.error==="not-allowed"||event.error==="service-not-allowed"){
-      updateVoiceVisualizer("Microphone permission needed","Allow microphone access, then click the microphone again.");
-      setAssistantStatus("Microphone permission was blocked.");
+  r.onresult=e=>{
+    let text="";
+    for(let i=e.resultIndex;i<e.results.length;i++) text+=e.results[i][0].transcript+" ";
+    text=text.trim();
+    if(!text||voiceCommandHandled||voiceCancelled)return;
+    document.getElementById("voiceAssistantInput").value=text;
+    updateVoiceVisualizer("I heard you...",text);
+    if(e.results[e.results.length-1].isFinal){
+      // Mark handled BEFORE speaking. This prevents the microphone from restarting
+      // and hearing the assistant's own reply.
+      voiceCommandHandled=true;
+      try{r.stop()}catch(err){}
       voiceListening=false;
       document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+      handleAssistantRequest(text);
+    }
+  };
+  r.onerror=e=>{
+    voiceListening=false;
+    document.getElementById("voiceAssistantMic")?.classList.remove("listening");
+    if(voiceCancelled||voiceCommandHandled)return;
+    if(e.error==="not-allowed"||e.error==="service-not-allowed"){
+      setAssistantStatus("Please allow microphone access, then press the microphone again.");
+      updateVoiceVisualizer("Microphone access needed","Allow the microphone and try again.");
       return;
     }
-    updateVoiceVisualizer("Still listening...","I didn't catch that. Speak again — I will keep waiting.");
+    if(e.error==="no-speech"){
+      setAssistantStatus("I didn't hear anything. Press the microphone and speak again.");
+      updateVoiceVisualizer("I didn't hear anything","Press the microphone and try again.");
+      return;
+    }
+    setAssistantStatus("Voice recognition had a problem. Press the microphone and try again.");
   };
-
   r.onend=()=>{
     voiceListening=false;
     document.getElementById("voiceAssistantMic")?.classList.remove("listening");
-    if(!voiceCancelled&&!voiceCommandHandled){
-      voiceRestartTimer=setTimeout(()=>{
-        voiceRestartTimer=null;
-        if(!voiceCancelled&&!voiceCommandHandled){
-          try{r.start();}catch(e){
-            setTimeout(()=>{if(!voiceCancelled&&!voiceCommandHandled)try{r.start();}catch(ignore){}},500);
-          }
-        }
-      },300);
+    // IMPORTANT: never auto-restart after a command. The user must press the mic again.
+    if(!voiceCommandHandled&&!voiceCancelled){
+      setAssistantStatus("Ready. Press the microphone and tell me what you need.");
     }
   };
   return r;
 }
-
 function toggleVoiceAssistant(){
+  openVoiceAssistant();
   if(!voiceRecognition)voiceRecognition=setupVoiceRecognition();
   if(!voiceRecognition)return;
   if(voiceListening){closeVoiceVisualizer();return;}
+  speechSynthesis?.cancel?.();
   voiceCancelled=false;
   voiceCommandHandled=false;
-  openVoiceVisualizer();
-  setAssistantStatus("Listening… say a product name.");
-  try{voiceRecognition.start();}
-  catch(e){
-    voiceListening=true;
-    document.getElementById("voiceAssistantMic")?.classList.add("listening");
-  }
+  voiceLangIndex=0;
+  voiceRecognition.lang=voiceLanguages[voiceLangIndex];
+  try{voiceRecognition.start();}catch(e){setAssistantStatus("Ready. Press the microphone again to speak.");}
 }
-
 document.addEventListener("keydown",e=>{if(e.key==="Enter"&&document.activeElement?.id==="voiceAssistantInput")handleAssistantText();});
 </script>
 
@@ -2970,15 +3008,15 @@ document.addEventListener("keydown",e=>{if(e.key==="Enter"&&document.activeEleme
     <div class="voice-core"><div class="voice-mic-symbol">🎙</div></div>
     <div class="voice-frequency" aria-hidden="true"><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span><span style="--voice-bar:0.2857142857142857"></span><span style="--voice-bar:0.42857142857142855"></span><span style="--voice-bar:0.5714285714285714"></span><span style="--voice-bar:0.7142857142857143"></span><span style="--voice-bar:0.8571428571428571"></span><span style="--voice-bar:0.0"></span><span style="--voice-bar:0.14285714285714285"></span></div>
     <div class="voice-listening-label" id="voiceVisualizerLabel">Listening...</div>
-    <div class="voice-listening-sub" id="voiceVisualizerSub">Say a product name.</div>
+    <div class="voice-listening-sub" id="voiceVisualizerSub">Tell me what you need — products, pages, services, contact, or help.</div>
     <button class="voice-close" type="button" onclick="closeVoiceVisualizer()">✕ Stop Listening</button>
   </div>
 </div>
 <div class="voice-assistant">
   <div class="voice-assistant-panel" id="voiceAssistantPanel">
     <div class="voice-assistant-title">🤖 VRISHIN Shopping Assistant</div>
-    <div class="voice-assistant-status" id="voiceAssistantStatus">Say or type a product.</div>
-    <div class="voice-assistant-input"><input id="voiceAssistantInput" type="text" placeholder="Try: show me lipstick"><button type="button" onclick="handleAssistantText()">Go</button></div>
+    <div class="voice-assistant-status" id="voiceAssistantStatus">Tell me what you need.</div>
+    <div class="voice-assistant-input"><input id="voiceAssistantInput" type="text" placeholder="Try: take me to contact or show me products"><button type="button" onclick="handleAssistantText()">Go</button></div>
   </div>
   <button class="voice-assistant-mic" id="voiceAssistantMic" type="button" onclick="toggleVoiceAssistant()" title="Voice Shopping Assistant" aria-label="Open voice shopping assistant">🎙️</button>
 </div>
